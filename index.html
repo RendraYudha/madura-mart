@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta author="Rendra Yudha Adi Kalla">
+        <title>MM | Madura Mart</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    </head>
+    <body>
+        <section id="header">
+            <div class="top"></div>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/tes.png" alt="Logo" width="60" height="40">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link rounded-2" aria-current="page" href="index.html">Beranda</a>
+                            </li>
+                            <!-- <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form> -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link rounded-2 dropdown-toggle" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Produk</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="product.html">Semua Produk</a></li>
+                                    <li><a class="dropdown-item" href="#">Makanan & Minuman</a></li>
+                                    <li><a class="dropdown-item" href="#">Sembako</a></li>
+                                    <li><a class="dropdown-item" href="#">Kebersihan</a></li>
+                                    <li><a class="dropdown-item" href="#">Peralatan Harian</a></li>
+                                    <li><a class="dropdown-item" href="#">Rumah Tangga</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link rounded-2" href="#">Tentang Kami</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link rounded-2" href="#kontak">Kontak</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link rounded-2" href=""><i data-feather="shopping-cart"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <section id="banner">
+            <div class="p-5 bg-body-tertiary banner">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold" style="color: #FFF8DC; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">Mudah! Murah! Cepat!</h1>
+                    <p class="col-md-8 fs-4">Belanja lebih hemat tanpa ribet, semua tersedia dalam satu genggaman.
+                        Nikmati pengalaman berbelanja cepat, mudah, dan terpercaya hanya di Madura Mart.</p>
+                    <a href="product.html" class="btn btn-lg btn-success">Cari Produk</a>
+                </div>
+            </div>
+            <div class="wave-transition">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#f8f9fa"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#f8f9fa"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#f8f9fa"></path>
+                </svg>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light">
+            <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="1000">
+                <img src="img/public/mart-img.jpg" alt="Madura Mart" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
+                <h2 class="mb-3">Tentang <span class="text-hijau">Madura Mart</span></h2>
+                <p class="text-muted">
+                    Madura Mart adalah toko serba ada yang menghadirkan kemudahan berbelanja dengan harga terjangkau. Kami berkomitmen menyediakan produk berkualitas, layanan cepat, dan pengalaman belanja yang menyenangkan untuk semua pelanggan.
+                </p>
+                <a href="profile.html" class="btn btn-success mt-3">Selengkapnya</a>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Section Testimoni -->
+        <section id="testimoni" class="py-5 bg-light-subtle">
+            <div class="container py-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Apa Kata Pelanggan Kami</h2>
+                        <p class="lead text-muted">Testimoni dari pelanggan setia <span class="text-hijau">Madura Mart</span></p>
+                    </div>
+                </div>
+                
+                <!-- Carousel Testimoni -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div id="testimoniCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <!-- Testimoni 1 -->
+                                <div class="carousel-item active">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3 text-center">
+                                            <img src="img/public/orang.jpg" class="rounded-circle img-fluid testimoni-img" alt="Pelanggan 1" width="150" height="150">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <blockquote class="blockquote">
+                                                <p class="fs-4 mb-3">"Belanja di Madura Mart sangat praktis dan harganya terjangkau. Produk selalu fresh dan layanannya cepat!"</p>
+                                                <footer class="blockquote-footer mt-3"><span class="text-hijau">Budi Santoso</span>, <cite>Pelanggan sejak 2020</cite></footer>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Testimoni 2 -->
+                                <div class="carousel-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3 text-center">
+                                            <img src="img/public/orang.jpg" class="rounded-circle img-fluid testimoni-img" alt="Pelanggan 2" width="150" height="150">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <blockquote class="blockquote">
+                                                <p class="fs-4 mb-3">"Pengiriman sangat cepat, pesanan saya selalu sampai tepat waktu. Recommended banget!"</p>
+                                                <footer class="blockquote-footer mt-3"><span class="text-hijau">Ani Wijaya</span>, <cite>Pelanggan sejak 2021</cite></footer>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Testimoni 3 -->
+                                <div class="carousel-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3 text-center">
+                                            <img src="img/public/orang.jpg" class="rounded-circle img-fluid testimoni-img" alt="Pelanggan 3" width="150" height="150">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <blockquote class="blockquote">
+                                                <p class="fs-4 mb-3">"Harga kompetitif dengan kualitas produk yang terjamin. Sekarang saya selalu belanja di Madura Mart."</p>
+                                                <footer class="blockquote-footer mt-3"><span class="text-hijau">Rina Amelia</span>, <cite>Pelanggan sejak 2019</cite></footer>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Testimoni 4 -->
+                                <div class="carousel-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3 text-center">
+                                            <img src="img/public/orang.jpg" class="rounded-circle img-fluid testimoni-img" alt="Pelanggan 4" width="150" height="150">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <blockquote class="blockquote">
+                                                <p class="fs-4 mb-3">"Pelayanan CS-nya ramah dan membantu. Pengalaman belanja online yang menyenangkan."</p>
+                                                <footer class="blockquote-footer mt-3"><span class="text-hijau">Dewi Kartika</span>, <cite>Pelanggan sejak 2022</cite></footer>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Testimoni 5 -->
+                                <div class="carousel-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3 text-center">
+                                            <img src="img/public/orang.jpg" class="rounded-circle img-fluid testimoni-img" alt="Pelanggan 5" width="150" height="150">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <blockquote class="blockquote">
+                                                <p class="fs-4 mb-3">"Produk lengkap, dari kebutuhan sehari-hari sampai bahan khusus semua ada. Sangat memuaskan!"</p>
+                                                <footer class="blockquote-footer mt-3"><span class="text-hijau">Agus Prasetyo</span>, <cite>Pelanggan sejak 2018</cite></footer>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Navigation Controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#testimoniCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#testimoniCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Rekomendasi Produk -->
+        <section id="rekomendasi" class="py-5 bg-light">
+            <div class="container py-4" data-aos="fade-left" data-aos-duration="1000">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Rekomendasi Produk</h2>
+                        <p class="lead text-muted">Produk terbaik pilihan untuk Anda</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div id="produkCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <!-- Slide 1 -->
+                                <div class="carousel-item active">
+                                    <div class="row g-4">
+                                        <!-- Produk 1 -->
+                                        <div class="col-md-3">
+                                            <div class="card h-100 border-0 shadow-sm">
+                                                <span class="badge bg-success position-absolute top-0 end-0 m-2">Terlaris</span>
+                                                <img src="img/produk/produk1.jpg" class="card-img-top" alt="Minyak Goreng">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Minyak Goreng</h5>
+                                                    <p class="text-muted small">1 Liter</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="mb-0 text-success">Rp 18.000</h6>
+                                                        <button class="btn btn-sm btn-outline-success">
+                                                            <i data-feather="shopping-cart" class="me-1"></i> Beli
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Produk 2 -->
+                                        <div class="col-md-3">
+                                            <div class="card h-100 border-0 shadow-sm">
+                                                <img src="https://cdn-klik.klikindomaret.com/klik-catalog/product/20138128_1.jpg" class="card-img-top" alt="Beras Premium">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Beras Premium</h5>
+                                                    <p class="text-muted small">5 Kg</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="mb-0 text-success">Rp 65.000</h6>
+                                                        <button class="btn btn-sm btn-outline-success">
+                                                            <i data-feather="shopping-cart" class="me-1"></i> Beli
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Produk 3 -->
+                                        <div class="col-md-3">
+                                            <div class="card h-100 border-0 shadow-sm">
+                                                <span class="badge bg-danger position-absolute top-0 end-0 m-2">Promo</span>
+                                                <img src="https://cdn-klik.klikindomaret.com/klik-catalog/product/20138128_1.jpg" class="card-img-top" alt="Telur Ayam">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Telur Ayam</h5>
+                                                    <p class="text-muted small">1 Kg</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="mb-0 text-success">Rp 25.000</h6>
+                                                        <button class="btn btn-sm btn-outline-success">
+                                                            <i data-feather="shopping-cart" class="me-1"></i> Beli
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Produk 4 -->
+                                        <div class="col-md-3">
+                                            <div class="card h-100 border-0 shadow-sm">
+                                                <img src="img/produk/produk4.jpg" class="card-img-top" alt="Gula Pasir">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Gula Pasir</h5>
+                                                    <p class="text-muted small">1 Kg</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="mb-0 text-success">Rp 15.000</h6>
+                                                        <button class="btn btn-sm btn-outline-success">
+                                                            <i data-feather="shopping-cart" class="me-1"></i> Beli
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Slide 2 -->
+                                <div class="carousel-item">
+                                    <div class="row g-4">
+                                        <!-- Produk 5 -->
+                                        <div class="col-md-3">
+                                            <div class="card h-100 border-0 shadow-sm">
+                                                <img src="img/produk/produk5.jpg" class="card-img-top" alt="Mie Instan">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Mie Instan</h5>
+                                                    <p class="text-muted small">1 Dus (40 pcs)</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="mb-0 text-success">Rp 85.000</h6>
+                                                        <button class="btn btn-sm btn-outline-success">
+                                                            <i data-feather="shopping-cart" class="me-1"></i> Beli
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Produk 6 -->
+                                        <div class="col-md-3">
+                                            <div class="card h-100 border-0 shadow-sm">
+                                                <span class="badge bg-success position-absolute top-0 end-0 m-2">Baru</span>
+                                                <img src="img/produk/produk6.jpg" class="card-img-top" alt="Sabun Mandi">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Sabun Mandi</h5>
+                                                    <p class="text-muted small">6 pcs</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="mb-0 text-success">Rp 30.000</h6>
+                                                        <button class="btn btn-sm btn-outline-success">
+                                                            <i data-feather="shopping-cart" class="me-1"></i> Beli
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Produk 7 -->
+                                        <div class="col-md-3">
+                                            <div class="card h-100 border-0 shadow-sm">
+                                                <img src="img/produk/produk7.jpg" class="card-img-top" alt="Kopi Sachet">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Kopi Sachet</h5>
+                                                    <p class="text-muted small">1 Box (25 sachet)</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="mb-0 text-success">Rp 45.000</h6>
+                                                        <button class="btn btn-sm btn-outline-success">
+                                                            <i data-feather="shopping-cart" class="me-1"></i> Beli
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Produk 8 -->
+                                        <div class="col-md-3">
+                                            <div class="card h-100 border-0 shadow-sm">
+                                                <span class="badge bg-danger position-absolute top-0 end-0 m-2">Diskon</span>
+                                                <img src="img/produk/produk8.jpg" class="card-img-top" alt="Susu UHT">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Susu UHT</h5>
+                                                    <p class="text-muted small">1 Liter</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="mb-0 text-success">Rp 20.000</h6>
+                                                        <button class="btn btn-sm btn-outline-success">
+                                                            <i data-feather="shopping-cart" class="me-1"></i> Beli
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Navigation Controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#produkCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon bg-success rounded-circle" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#produkCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon bg-success rounded-circle" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="product.html" class="btn btn-success px-4">
+                        <i data-feather="shopping-bag" class="me-2"></i> Lihat Semua Produk
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Formulir Kontak -->
+        <section id="kontak" class="py-5 bg-light-subtle">
+            <div class="container py-5" data-aos="fade-up" data-aos-duration="1000">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Hubungi Kami</h2>
+                        <p class="lead text-muted">Kirimkan saran, kritik, atau pertanyaan Anda melalui form berikut</p>
+                    </div>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card shadow-sm border-0">
+                            <div class="card-body p-5">
+                                <form id="contactForm">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <label for="nama" class="form-label">Nama Lengkap</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text bg-success text-white">
+                                                    <i data-feather="user"></i>
+                                                </span>
+                                                <input type="text" class="form-control" id="nama" placeholder="Nama Anda" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label for="email" class="form-label">Alamat Email</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text bg-success text-white">
+                                                    <i data-feather="mail"></i>
+                                                </span>
+                                                <input type="email" class="form-control" id="email" placeholder="email@contoh.com" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label for="subjek" class="form-label">Subjek</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-success text-white">
+                                                <i data-feather="file-text"></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="subjek" placeholder="Subjek pesan" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label for="pesan" class="form-label">Pesan Anda</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-success text-white align-items-start">
+                                                <i data-feather="message-square"></i>
+                                            </span>
+                                            <textarea class="form-control" id="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-4 form-check">
+                                        <input type="checkbox" class="form-check-input" id="newsletter">
+                                        <label class="form-check-label" for="newsletter">Saya ingin berlangganan newsletter</label>
+                                    </div>
+                                    
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-success btn-lg">
+                                            <i data-feather="send" class="me-2"></i> Kirim Pesan
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Informasi Kontak Tambahan -->
+                <!-- <div class="row mt-5">
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="p-4 bg-white rounded shadow-sm">
+                            <i data-feather="phone" class="text-success mb-3" width="36" height="36"></i>
+                            <h5>Telepon</h5>
+                            <p class="mb-0">(081) 234-5678</p>
+                            <small class="text-muted">Senin-Minggu, 08:00-21:00 WIB</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="p-4 bg-white rounded shadow-sm">
+                            <i data-feather="mail" class="text-success mb-3" width="36" height="36"></i>
+                            <h5>Email</h5>
+                            <p class="mb-0">info@maduramart.com</p>
+                            <small class="text-muted">Respon dalam 1x24 jam</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="p-4 bg-white rounded shadow-sm">
+                            <i data-feather="map-pin" class="text-success mb-3" width="36" height="36"></i>
+                            <h5>Lokasi</h5>
+                            <p class="mb-0">Jl. Raya Madura No. 123</p>
+                            <small class="text-muted">Buka di Google Maps</small>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <section id="footer">
+            <footer class="bg-dark text-white pt-5 pb-4">
+                <div class="container">
+                    <div class="row">
+                        <!-- Kolom Tentang -->
+                        <div class="col-lg-4 mb-4">
+                            <h5 class="text-success mb-4">
+                                <i data-feather="shopping-bag"></i> Madura Mart
+                            </h5>
+                            <p>Toko serba ada dengan harga terjangkau. Belanja lebih hemat, cepat, dan mudah dalam satu genggaman.</p>
+                            <div class="social-icons mt-4">
+                                <a href="#" class="text-white me-3"><i data-feather="facebook"></i></a>
+                                <a href="#" class="text-white me-3"><i data-feather="instagram"></i></a>
+                                <a href="#" class="text-white me-3"><i data-feather="twitter"></i></a>
+                                <a href="#" class="text-white"><i data-feather="youtube"></i></a>
+                            </div>
+                        </div>
+            
+                        <!-- Kolom Link Cepat -->
+                        <div class="col-lg-2 col-md-6 mb-4">
+                            <h5 class="text-success mb-4">Link Cepat</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="index.html" class="text-white text-decoration-none"><i data-feather="chevron-right" class="me-2"></i> Beranda</a></li>
+                                <li class="mb-2"><a href="product.html" class="text-white text-decoration-none"><i data-feather="chevron-right" class="me-2"></i> Produk</a></li>
+                                <li class="mb-2"><a href="profil.html" class="text-white text-decoration-none"><i data-feather="chevron-right" class="me-2"></i> Tentang Kami</a></li>
+                                <li><a href="contact.html" class="text-white text-decoration-none"><i data-feather="chevron-right" class="me-2"></i> Kontak</a></li>
+                            </ul>
+                        </div>
+            
+                        <!-- Kolom Kontak -->
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <h5 class="text-success mb-4">Hubungi Kami</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><a href="#" class="text-white text-decoration-none"><i data-feather="map-pin" class="me-2"></i> Jl. Raya Madura No. 123</a></li>
+                                <li class="mb-3"><a href="mailto:rendra.23102@mhs.unesa.ac.id" class="text-white text-decoration-none"><i data-feather="mail" class="me-2"></i> rendra.23102@mhs.unesa.ac.id</a></li>
+                                <li class="mb-3"><a href="tel:+6285731552077" class="text-white text-decoration-none"><i data-feather="phone" class="me-2"></i> (085) 731-552-077</a></li>
+                                <li><a href="#" class="text-white text-decoration-none"><i data-feather="clock" class="me-2"></i> Buka 24 jam</a></li>
+                            </ul>
+                        </div>
+            
+                        <!-- Kolom Newsletter -->
+                        <div class="col-lg-3 mb-4">
+                            <h5 class="text-success mb-4">Newsletter</h5>
+                            <p>Dapatkan promo dan penawaran spesial langsung ke email Anda.</p>
+                            <form class="mt-3">
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Email Anda" aria-label="Email Anda">
+                                    <button class="btn btn-success" type="submit"><i data-feather="send"></i></button>
+                                </div>
+                            </form>
+                            <div class="payment-methods mt-4">
+                                <h6 class="text-success mb-3">Metode Pembayaran</h6>
+                                <div class="d-flex flex-wrap">
+                                    <i data-feather="credit-card" class="me-3 mb-2"></i>
+                                    <i data-feather="dollar-sign" class="me-3 mb-2"></i>
+                                    <i data-feather="shopping-cart" class="me-3 mb-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <hr class="my-4 bg-secondary">
+            
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="mb-0">&copy; 2025 Madura Mart. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <p>Made with ❤️</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+
+        <script>
+            feather.replace();
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var myCarousel = document.getElementById('testimoniCarousel');
+                var carousel = new bootstrap.Carousel(myCarousel, {
+                    interval: 5000, // Ganti slide setiap 5 detik
+                    pause: 'hover', // Pause saat hover
+                    wrap: true // Loop terus menerus
+                });
+
+                document.querySelector('footer .mb-0').innerHTML = `&copy; ${new Date().getFullYear()} Madura Mart. All rights reserved.`;
+
+                // Form submission handler
+                const contactForm = document.getElementById('contactForm');
+                if (contactForm) {
+                    contactForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        // Simpan data form (bisa diganti dengan AJAX)
+                        const formData = {
+                            nama: document.getElementById('nama').value,
+                            email: document.getElementById('email').value,
+                            subjek: document.getElementById('subjek').value,
+                            pesan: document.getElementById('pesan').value,
+                            newsletter: document.getElementById('newsletter').checked
+                        };
+                        
+                        console.log('Form submitted:', formData);
+                        
+                        // Tampilkan alert (bisa diganti dengan modal atau notifikasi lebih baik)
+                        alert('Terima kasih atas pesan Anda! Kami akan segera merespon pesan ini.');
+                        
+                        // Reset form
+                        contactForm.reset();
+                    });
+                }
+            });
+
+        </script>
+    </body>
+</html>

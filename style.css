@@ -1,0 +1,156 @@
+body {
+    font-family: "Figtree", sans-serif;
+}
+
+.nav-link:hover, .dropdown-item:hover {
+    background-color:#007042;
+    color: white;
+}
+
+.nav-link {
+    padding-left: 2rem;
+}
+
+.top {
+    background-color: #007042;
+    height: 1rem;
+    /* display: block; */
+    z-index: 1;
+}
+
+.btn-success:hover {
+    background-color: white;
+    color: var(--bs-success-text-emphasis);
+}
+
+.btn-primary:hover {
+    background-color: white;
+    color: var(--bs-primary-text-emphasis);
+}
+
+
+
+/* Banner styling */
+.banner {
+    background: url('img/public/banner.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 85vh;
+    width: 100%;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+}
+
+/* Wave transisi yang benar */
+.wave-transition {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg)
+    /* Hapus transform: rotate(180deg) */
+}
+
+.wave-transition svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 120px; /* Sesuaikan tinggi wave sesuai kebutuhan */
+}
+
+/* Untuk konten di atas wave */
+.container-fluid.py-5 {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 120px; /* Sesuaikan dengan tinggi wave */
+}
+
+.testimoni-img {
+    border: 5px solid #f8f9fa;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.carousel {
+    padding: 20px 0;
+}
+
+.carousel-item {
+    padding: 30px;
+}
+
+blockquote {
+    position: relative;
+    padding-left: 30px;
+}
+
+blockquote:before {
+    content: "\201C";
+    font-size: 60px;
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    color: rgba(0,0,0,0.1);
+}
+
+.text-hijau {
+    color: #007042;
+}
+
+footer a:hover {
+    color: #20c997 !important;
+    transition: color 0.3s ease;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.payment-methods i {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+#kontak .form-control, #kontak .input-group-text {
+    border-color: #dee2e6;
+}
+
+#kontak .form-control:focus {
+    border-color: #20c997;
+    box-shadow: 0 0 0 0.25rem rgba(32, 201, 151, 0.25);
+}
+
+#kontak .card {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#kontak .input-group-text {
+    min-width: 45px;
+    justify-content: center;
+}
+
+#kontak textarea.form-control {
+    min-height: 150px;
+}
+
+#kontak .bg-white {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#kontak .bg-white:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
