@@ -1,8 +1,49 @@
 {
-    "menu": [
+    "produk": [
         {
-            "kategori": "kopi",
-            "nama": "Robusta"
+            "id": 1,
+            "nama": "Minyak Goreng Premium",
+            "deskripsi": "Minyak goreng sehat tanpa kolesterol, cocok untuk segala jenis masakan.",
+            "harga": 25000,
+            "harga_asli": 30000,
+            "diskon": 17,
+            "stok": 50,
+            "gambar": "https://down-id.img.susercontent.com/file/ac81d43af081d7cc9647574672c8ebb4@resize_w900_nl.webp",
+            "rating": 4.5,
+            "ulasan": 124,
+            "kategori": "Sembako",
+            "berat": 1000,
+            "sku": "MM-OIL-001"
+        },
+        {
+            "id": 2,
+            "nama": "Minyak Goreng Premium",
+            "deskripsi": "Minyak goreng sehat tanpa kolesterol, cocok untuk segala jenis masakan.",
+            "harga": 25000,
+            "harga_asli": 30000,
+            "diskon": 17,
+            "stok": 50,
+            "gambar": "https://down-id.img.susercontent.com/file/ac81d43af081d7cc9647574672c8ebb4@resize_w900_nl.webp",
+            "rating": 4.5,
+            "ulasan": 124,
+            "kategori": "Sembako",
+            "berat": 1000,
+            "sku": "MM-OIL-001"
+        },
+        {
+            "id": 3,
+            "nama": "Minyak Goreng Premium",
+            "deskripsi": "Minyak goreng sehat tanpa kolesterol, cocok untuk segala jenis masakan.",
+            "harga": 25000,
+            "harga_asli": 30000,
+            "diskon": 17,
+            "stok": 50,
+            "gambar": "https://down-id.img.susercontent.com/file/ac81d43af081d7cc9647574672c8ebb4@resize_w900_nl.webp",
+            "rating": 4.5,
+            "ulasan": 124,
+            "kategori": "Sembako",
+            "berat": 1000,
+            "sku": "MM-OIL-001"
         }
     ]
 }

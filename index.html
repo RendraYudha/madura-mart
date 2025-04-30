@@ -11,7 +11,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/feather-icons"></script>
-        <script src="script.js"></script>
+        <script src="js/script.js"></script>
         <link rel="stylesheet" href="style.css">
         <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     </head>
@@ -50,7 +50,7 @@
                                 <a class="nav-link rounded-2" href="#">Tentang Kami</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link rounded-2" href="#kontak">Kontak</a>
+                                <a class="nav-link rounded-2" href="index.html#kontak">Kontak</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link rounded-2" href=""><i data-feather="shopping-cart"></i></a>
@@ -62,20 +62,21 @@
         </section>
 
         <section id="banner">
-            <div class="p-5 bg-body-tertiary banner">
+            <div class="p-5 bg-body-tertiary banner" style="border: red;">
                 <div class="container-fluid py-5">
-                    <h1 class="display-5 fw-bold" style="color: #FFF8DC; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">Mudah! Murah! Cepat!</h1>
-                    <p class="col-md-8 fs-4">Belanja lebih hemat tanpa ribet, semua tersedia dalam satu genggaman.
+                    <h1 class="display-5 fw-bold" style="color: #FFFF00;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">Mudah! Murah! Cepat!</h1>
+                    <p class="col-md-8 fs-4" style="color: #FFFDD0;">Belanja lebih hemat tanpa ribet, semua tersedia dalam satu genggaman.
                         Nikmati pengalaman berbelanja cepat, mudah, dan terpercaya hanya di Madura Mart.</p>
                     <a href="product.html" class="btn btn-lg btn-success">Cari Produk</a>
                 </div>
-                <div class="wave-transition">
+                <!-- <div class="wave-transition">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
                         <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#f8f9fa"></path>
                         <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#f8f9fa"></path>
                         <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#f8f9fa"></path>
                     </svg>
-                </div>
+                </div> -->
             </div>
         </section>
 
@@ -221,44 +222,48 @@
                                     <div class="row g-4">
                                         <!-- Produk 1 -->
                                         <div class="col-md-3">
-                                            <div class="card h-100 border-0 shadow-sm">
-                                                <span class="badge bg-success position-absolute top-0 end-0 m-2">Terlaris</span>
-                                                <img src="img/produk/produk1.jpg" class="card-img-top" alt="Minyak Goreng">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Minyak Goreng</h5>
-                                                    <p class="text-muted small">1 Liter</p>
-                                                    <div class="d-flex justify-content-between align-items-center">
-                                                        <h6 class="mb-0 text-success">Rp 18.000</h6>
-                                                        <button class="btn btn-sm btn-outline-success">
-                                                            <i data-feather="shopping-cart" class="me-1"></i> Beli
-                                                        </button>
+                                            <a href="detail-produk.html?id=1" class="text-decoration-none">
+                                                <div class="card h-100 border-0 shadow-sm">
+                                                    <span class="badge bg-success position-absolute top-0 end-0 m-2">Terlaris</span>
+                                                    <img src="https://down-id.img.susercontent.com/file/id-11134201-7r98w-lzyh7j3xwv1kc5@resize_w900_nl.webp" class="card-img-top" alt="Minyak Goreng">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Minyak Goreng</h5>
+                                                        <p class="text-muted small">1 Liter</p>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <h6 class="mb-0 text-success">Rp 18.000</h6>
+                                                            <button class="btn btn-sm btn-outline-success">
+                                                                <i data-feather="shopping-cart" class="me-1"></i> Beli
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                         
                                         <!-- Produk 2 -->
                                         <div class="col-md-3">
-                                            <div class="card h-100 border-0 shadow-sm">
-                                                <img src="https://cdn-klik.klikindomaret.com/klik-catalog/product/20138128_1.jpg" class="card-img-top" alt="Beras Premium">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Beras Premium</h5>
-                                                    <p class="text-muted small">5 Kg</p>
-                                                    <div class="d-flex justify-content-between align-items-center">
-                                                        <h6 class="mb-0 text-success">Rp 65.000</h6>
-                                                        <button class="btn btn-sm btn-outline-success">
-                                                            <i data-feather="shopping-cart" class="me-1"></i> Beli
-                                                        </button>
+                                            <a href="detail.html?id=1" class="text-decoration-none">
+                                                <div class="card h-100 border-0 shadow-sm">
+                                                    <img src="https://down-id.img.susercontent.com/file/id-11134201-7r98t-lzyhgch3hj2za8@resize_w900_nl.webp" class="card-img-top" alt="Beras Premium">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Beras Premium</h5>
+                                                        <p class="text-muted small">5 Kg</p>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <h6 class="mb-0 text-success">Rp 65.000</h6>
+                                                            <button class="btn btn-sm btn-outline-success">
+                                                                <i data-feather="shopping-cart" class="me-1"></i> Beli
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                         
                                         <!-- Produk 3 -->
                                         <div class="col-md-3">
                                             <div class="card h-100 border-0 shadow-sm">
                                                 <span class="badge bg-danger position-absolute top-0 end-0 m-2">Promo</span>
-                                                <img src="https://cdn-klik.klikindomaret.com/klik-catalog/product/20138128_1.jpg" class="card-img-top" alt="Telur Ayam">
+                                                <img src="https://image.astronauts.cloud/product-images/2024/9/WhatsAppImage20240926at16_0ead3922-2d89-45d9-9ccf-eb1b45fbf003_900x900.jpg" class="card-img-top" alt="Telur Ayam">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Telur Ayam</h5>
                                                     <p class="text-muted small">1 Kg</p>
@@ -275,7 +280,7 @@
                                         <!-- Produk 4 -->
                                         <div class="col-md-3">
                                             <div class="card h-100 border-0 shadow-sm">
-                                                <img src="img/produk/produk4.jpg" class="card-img-top" alt="Gula Pasir">
+                                                <img src="https://down-id.img.susercontent.com/file/id-11134201-7r98z-lybrkk9oxkiwda@resize_w900_nl.webp" class="card-img-top" alt="Gula Pasir">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Gula Pasir</h5>
                                                     <p class="text-muted small">1 Kg</p>
@@ -297,7 +302,7 @@
                                         <!-- Produk 5 -->
                                         <div class="col-md-3">
                                             <div class="card h-100 border-0 shadow-sm">
-                                                <img src="img/produk/produk5.jpg" class="card-img-top" alt="Mie Instan">
+                                                <img src="https://down-id.img.susercontent.com/file/54feb96475be0859a0d69ba3aa35300b@resize_w900_nl.webp" class="card-img-top" alt="Mie Instan">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Mie Instan</h5>
                                                     <p class="text-muted small">1 Dus (40 pcs)</p>
@@ -315,7 +320,7 @@
                                         <div class="col-md-3">
                                             <div class="card h-100 border-0 shadow-sm">
                                                 <span class="badge bg-success position-absolute top-0 end-0 m-2">Baru</span>
-                                                <img src="img/produk/produk6.jpg" class="card-img-top" alt="Sabun Mandi">
+                                                <img src="https://down-id.img.susercontent.com/file/id-11134201-7quky-lev0ngxgpcmt1a@resize_w900_nl.webp" class="card-img-top" alt="Sabun Mandi">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Sabun Mandi</h5>
                                                     <p class="text-muted small">6 pcs</p>
@@ -332,7 +337,7 @@
                                         <!-- Produk 7 -->
                                         <div class="col-md-3">
                                             <div class="card h-100 border-0 shadow-sm">
-                                                <img src="img/produk/produk7.jpg" class="card-img-top" alt="Kopi Sachet">
+                                                <img src="https://down-id.img.susercontent.com/file/id-11134207-7qul7-lja3ccsv15zq1b@resize_w900_nl.webp" class="card-img-top" alt="Kopi Sachet">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Kopi Sachet</h5>
                                                     <p class="text-muted small">1 Box (25 sachet)</p>
@@ -350,7 +355,7 @@
                                         <div class="col-md-3">
                                             <div class="card h-100 border-0 shadow-sm">
                                                 <span class="badge bg-danger position-absolute top-0 end-0 m-2">Diskon</span>
-                                                <img src="img/produk/produk8.jpg" class="card-img-top" alt="Susu UHT">
+                                                <img src="https://down-id.img.susercontent.com/file/ac81d43af081d7cc9647574672c8ebb4@resize_w900_nl.webp" class="card-img-top" alt="Susu UHT">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Susu UHT</h5>
                                                     <p class="text-muted small">1 Liter</p>
@@ -574,42 +579,7 @@
             AOS.init();
         </script>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var myCarousel = document.getElementById('testimoniCarousel');
-                var carousel = new bootstrap.Carousel(myCarousel, {
-                    interval: 5000, // Ganti slide setiap 5 detik
-                    pause: 'hover', // Pause saat hover
-                    wrap: true // Loop terus menerus
-                });
-
-                document.querySelector('footer .mb-0').innerHTML = `&copy; ${new Date().getFullYear()} Madura Mart. All rights reserved.`;
-
-                // Form submission handler
-                const contactForm = document.getElementById('contactForm');
-                if (contactForm) {
-                    contactForm.addEventListener('submit', function(e) {
-                        e.preventDefault();
-                        
-                        // Simpan data form (bisa diganti dengan AJAX)
-                        const formData = {
-                            nama: document.getElementById('nama').value,
-                            email: document.getElementById('email').value,
-                            subjek: document.getElementById('subjek').value,
-                            pesan: document.getElementById('pesan').value,
-                            newsletter: document.getElementById('newsletter').checked
-                        };
-                        
-                        console.log('Form submitted:', formData);
-                        
-                        // Tampilkan alert (bisa diganti dengan modal atau notifikasi lebih baik)
-                        alert('Terima kasih atas pesan Anda! Kami akan segera merespon pesan ini.');
-                        
-                        // Reset form
-                        contactForm.reset();
-                    });
-                }
-            });
-
+            document.querySelector('footer .mb-0').innerHTML = `&copy; ${new Date().getFullYear()} Madura Mart. All rights reserved.`;
         </script>
     </body>
 </html>
