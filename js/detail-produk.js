@@ -1,4 +1,14 @@
 $(document).ready(function() {
+    // Variabel untuk menyimpan produk saat ini
+    let currentProduct = null;
+
+    // [BARU] Fungsi untuk menghitung diskon
+    function calculateDiscount(originalPrice, discountedPrice) {
+        if (!originalPrice || originalPrice <= discountedPrice) return 0;
+        const discountAmount = originalPrice - discountedPrice;
+        return Math.round((discountAmount / originalPrice) * 100);
+    }
+
     // Ambil ID produk dari URL
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
@@ -11,34 +21,33 @@ $(document).ready(function() {
     // Muat data produk dari JSON
     $.getJSON('data/produk.json')
         .done(function(data) {
-            console.log('Data mentah dari server:', data); // Debugging
+            console.log('Data mentah dari server:', data);
             
-            // Cek apakah properti produk ada dan merupakan array
             if (!data.produk || !Array.isArray(data.produk)) {
                 throw new Error('Format data tidak valid - properti "produk" harus ada dan berupa array');
             }
             
-            console.log('Daftar produk:', data.produk); // Debugging
-            
-            // Cari produk dengan konversi tipe data untuk memastikan match
-            const product = data.produk.find(p => {
-                console.log(`Membandingkan: ${p.id} (${typeof p.id}) dengan ${productId} (${typeof productId})`);
-                return String(p.id) === String(productId);
-            });
+            const product = data.produk.find(p => String(p.id) === String(productId));
             
             if (product) {
                 displayProduct(product);
             } else {
-                showError(`Produk dengan ID ${productId} tidak ditemukan dalam ${data.produk.length} produk yang tersedia`);
+                showError(`Produk tidak ditemukan`);
             }
         })
         .fail(function(jqXHR, textStatus, error) {
-            showError('Gagal memuat data produk: ' + textStatus);
-            console.error('Detail error:', error, jqXHR);
+            showError('Gagal memuat data produk');
+            console.error('Error:', error);
         });
 
+    // [DIMODIFIKASI] Fungsi untuk menampilkan produk
     function displayProduct(product) {
-        currentProduct = product; // Simpan produk saat ini
+        currentProduct = product;
+        
+        // [BARU] Hitung diskon
+        const discountPercentage = product.harga_asli ? 
+            calculateDiscount(product.harga_asli, product.harga) : 0;
+        
         // Format harga
         const formattedPrice = new Intl.NumberFormat('id-ID', {
             style: 'currency',
@@ -53,16 +62,16 @@ $(document).ready(function() {
         $('#product-stock').text(product.stok > 0 ? `Tersedia (${product.stok})` : 'Kosong');
         $('#product-category').text(product.kategori || 'Umum');
         
-        // Tampilkan diskon jika ada
-        if (product.diskon && product.diskon > 0) {
-            const originalPrice = product.harga_asli ? new Intl.NumberFormat('id-ID', {
+        // [DIMODIFIKASI] Tampilkan diskon jika ada
+        if (discountPercentage > 0) {
+            const originalPrice = new Intl.NumberFormat('id-ID', {
                 style: 'currency',
                 currency: 'IDR'
-            }).format(product.harga_asli) : '';
+            }).format(product.harga_asli);
             
             $('#product-discount').html(`
-                <span class="badge bg-danger me-2">Diskon ${product.diskon}%</span>
-                ${originalPrice ? `<span class="text-muted text-decoration-line-through">${originalPrice}</span>` : ''}
+                <span class="badge bg-danger me-2">Diskon ${discountPercentage}%</span>
+                <span class="text-muted text-decoration-line-through">${originalPrice}</span>
             `).show();
         } else {
             $('#product-discount').hide();
@@ -74,6 +83,9 @@ $(document).ready(function() {
         // Sembunyikan loading, tampilkan konten
         $('.loading').hide();
         $('.product-content').fadeIn();
+        
+        // Inisialisasi Feather Icons
+        feather.replace();
     }
 
     function showError(message) {
@@ -88,5 +100,6 @@ $(document).ready(function() {
             </div>
         `);
         $('.loading').hide();
+        feather.replace();
     }
 });

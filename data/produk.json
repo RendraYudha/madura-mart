@@ -2,48 +2,33 @@
     "produk": [
         {
             "id": 1,
-            "nama": "Minyak Goreng Premium",
-            "deskripsi": "Minyak goreng sehat tanpa kolesterol, cocok untuk segala jenis masakan.",
-            "harga": 25000,
-            "harga_asli": 30000,
-            "diskon": 17,
+            "nama": "Sania Minyak Goreng Sawit Premium Cooking Oil Pouch 1L",
+            "deskripsi": "Sania adalah minyak goreng Premium* yang diproduksi dengan beberapa tahap proses pemurnian dan penyaringan.",
+            "harga": 23000,
+            "harga_asli": 23800,
             "stok": 50,
-            "gambar": "https://down-id.img.susercontent.com/file/ac81d43af081d7cc9647574672c8ebb4@resize_w900_nl.webp",
-            "rating": 4.5,
-            "ulasan": 124,
-            "kategori": "Sembako",
-            "berat": 1000,
-            "sku": "MM-OIL-001"
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134201-7r98w-lzyh7j3xwv1kc5@resize_w900_nl.webp",
+            "kategori": "Sembako"
         },
         {
             "id": 2,
-            "nama": "Minyak Goreng Premium",
-            "deskripsi": "Minyak goreng sehat tanpa kolesterol, cocok untuk segala jenis masakan.",
-            "harga": 25000,
-            "harga_asli": 30000,
-            "diskon": 17,
+            "nama": "Frisian Flag Susu UHT Swiss Chocolate 3 x 225 ml",
+            "deskripsi": "Frisian Flag UHT Swiss Chocolate 225ml merupakan perpaduan susu UHT rendah lemak dan rasa Swiss Chocolate yang pasti enak dan cocok buat kamu yang sedang diet! Diperkaya kandungan zat gizi makro (protein, karbohidrat dan lemak) dan sumber 7 Vitamin (Vitamin A, D3, E, B1, B2, B3,B5, B6 dan B12) dan sumber 8 Mineral (Kalsium, Fosfor, Iodium, Magnesium, Zink, Selenium, Natrium dan Kalium) yang tetap terasa nikmat.",
+            "harga": 17000,
+            "harga_asli": 18800,
             "stok": 50,
-            "gambar": "https://down-id.img.susercontent.com/file/ac81d43af081d7cc9647574672c8ebb4@resize_w900_nl.webp",
-            "rating": 4.5,
-            "ulasan": 124,
-            "kategori": "Sembako",
-            "berat": 1000,
-            "sku": "MM-OIL-001"
+            "gambar": "https://down-id.img.susercontent.com/file/407c51648a6eede853fc654f2787490b@resize_w900_nl.webp",
+            "kategori": "Sembako"
         },
         {
             "id": 3,
-            "nama": "Minyak Goreng Premium",
-            "deskripsi": "Minyak goreng sehat tanpa kolesterol, cocok untuk segala jenis masakan.",
-            "harga": 25000,
-            "harga_asli": 30000,
-            "diskon": 17,
+            "nama": "Gulaku Gula Tebu Premium 1kg",
+            "deskripsi": "Gulaku Gula Tebu Premium 1kg merupakan gula murni yang terbuat dari gula tebu asli pilihan. Diproses secara higienis yang telah memenuhi standar mutu, sehingga dapat menghasilkan gula yang manis, alami, murni dan bersih.",
+            "harga": 20400,
+            "harga_asli": 20600,
             "stok": 50,
-            "gambar": "https://down-id.img.susercontent.com/file/ac81d43af081d7cc9647574672c8ebb4@resize_w900_nl.webp",
-            "rating": 4.5,
-            "ulasan": 124,
-            "kategori": "Sembako",
-            "berat": 1000,
-            "sku": "MM-OIL-001"
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134201-7r98z-lybrkk9oxkiwda@resize_w900_nl.webp",
+            "kategori": "Sembako"
         }
     ]
 }
