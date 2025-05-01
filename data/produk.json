@@ -6,7 +6,7 @@
             "deskripsi": "Sania adalah minyak goreng Premium* yang diproduksi dengan beberapa tahap proses pemurnian dan penyaringan.",
             "harga": 23000,
             "harga_asli": 23800,
-            "stok": 50,
+            "stok": 550,
             "gambar": "https://down-id.img.susercontent.com/file/id-11134201-7r98w-lzyh7j3xwv1kc5@resize_w900_nl.webp",
             "kategori": "Sembako"
         },
@@ -16,9 +16,9 @@
             "deskripsi": "Frisian Flag UHT Swiss Chocolate 225ml merupakan perpaduan susu UHT rendah lemak dan rasa Swiss Chocolate yang pasti enak dan cocok buat kamu yang sedang diet! Diperkaya kandungan zat gizi makro (protein, karbohidrat dan lemak) dan sumber 7 Vitamin (Vitamin A, D3, E, B1, B2, B3,B5, B6 dan B12) dan sumber 8 Mineral (Kalsium, Fosfor, Iodium, Magnesium, Zink, Selenium, Natrium dan Kalium) yang tetap terasa nikmat.",
             "harga": 17000,
             "harga_asli": 18800,
-            "stok": 50,
+            "stok": 250,
             "gambar": "https://down-id.img.susercontent.com/file/407c51648a6eede853fc654f2787490b@resize_w900_nl.webp",
-            "kategori": "Sembako"
+            "kategori": "Susu & Olahan Susu"
         },
         {
             "id": 3,
@@ -26,9 +26,99 @@
             "deskripsi": "Gulaku Gula Tebu Premium 1kg merupakan gula murni yang terbuat dari gula tebu asli pilihan. Diproses secara higienis yang telah memenuhi standar mutu, sehingga dapat menghasilkan gula yang manis, alami, murni dan bersih.",
             "harga": 20400,
             "harga_asli": 20600,
-            "stok": 50,
+            "stok": 560,
             "gambar": "https://down-id.img.susercontent.com/file/id-11134201-7r98z-lybrkk9oxkiwda@resize_w900_nl.webp",
             "kategori": "Sembako"
+        },
+        {
+            "id": 4,
+            "nama": "ABC Sarden Saus Cabai 425 g",
+            "deskripsi": "Sarden ABC Saus Cabai adalah pilihan tepat untuk ibu modern yang selalu berusaha mencari makanan sehat dan bergizi untuk keluarga tercinta.",
+            "harga": 34300,
+            "harga_asli": 28400,
+            "stok": 150,
+            "gambar": "https://down-id.img.susercontent.com/file/d0c61ee22edae76687120254ec1aae15@resize_w900_nl.webp",
+            "kategori": "Makanan Kaleng"
+        },
+        {
+            "id": 5,
+            "nama": "Vinisi Chunk Light Tuna 160 gr",
+            "deskripsi": "Vinisi Chunk Light Tuna 160gr merupakan potongan-potongan daging tuna dalam kaleng yang siap diolah menjadi segala macam masakan.",
+            "harga": 23400,
+            "harga_asli": 23600,
+            "stok": 500,
+            "gambar": "https://down-id.img.susercontent.com/file/23d8c362f3ca017bcd2faebd4443fa77@resize_w900_nl.webp",
+            "kategori": "Makanan Kaleng"
+        },
+        {
+            "id": 6,
+            "nama": "SW Peach Halves in Syrup Buah Kaleng 825 gr",
+            "deskripsi": "Rangkaian produk Del Monte dengan rasa yang nikmat, kesegaran yang menyeluruh, dan praktis membuat hari Anda semakin ceria.",
+            "harga": 69100,
+            "harga_asli": 70600,
+            "stok": 50,
+            "gambar": "https://down-id.img.susercontent.com/file/150cf5c9cdd157e026881299792db265@resize_w900_nl.webp",
+            "kategori": "Makanan Kaleng"
+        },
+        {
+            "id": 7,
+            "nama": "Home Ikan Sarden Tomat 2 x 425 gr",
+            "deskripsi": "HOME Sardine merupakan sajian sardine siap saji yang praktis, lezat dan sehat. Perpaduan ikan sardine pilihan yang dipadukan dengan saus tomat, menjadikan HOME Sardine sajian lezat sesuai dengan cita rasa masyarakat Indonesia.",
+            "harga": 32800,
+            "harga_asli": 36500,
+            "stok": 50,
+            "gambar": "https://down-id.img.susercontent.com/file/sg-11134201-23020-53yeayrv93mvda@resize_w900_nl.webp",
+            "kategori": "Makanan Kaleng"
+        },
+        {
+            "id": 8,
+            "nama": "Indomie Mie Instan Ayam Bawang 5 x 69 gr",
+            "deskripsi": "Indomie Ayam Bawang 69gr merupakan mie instant rasa ayam bawang yang memiliki cita rasa yang gurih dan lezat. Terbuat menggunakan tepung terigu, minyak sayur, tepung tapioka, garam, pemantap, pengatur keasaman, mineral (zat besi) , pewarna (tartrazine Cl19140), antioksidan dengan tekstur yang lembut.",
+            "harga": 15200,
+            "harga_asli": 15900,
+            "stok": 5000,
+            "gambar": "https://down-id.img.susercontent.com/file/94ded139255014a108ebeede48fbe0c4@resize_w900_nl.webp",
+            "kategori": "Makanan Instan"
+        },
+        {
+            "id": 9,
+            "nama": "Indomie Mi Goreng Mie Instan 5 x 85 gr",
+            "deskripsi": "Indomie Goreng 85 gr merupakan mie instan tanpa kuah. Perpaduan antara mi dan bumbu otentik makanan khas Indonesia menjadikan Indomie goreng makanan yang sangat spesial apalagi bila disajikan dikala cuaca dingin atau hujan.",
+            "harga": 17300,
+            "harga_asli": 18000,
+            "stok": 5000,
+            "gambar": "https://down-id.img.susercontent.com/file/sg-11134201-22100-3wvsurnk0tiv75@resize_w900_nl.webp",
+            "kategori": "Makanan Instan"
+        },
+        {
+            "id": 10,
+            "nama": "Indomie Mie Instan Soto Mie 5 x 70 gr",
+            "deskripsi": "Indomie Soto Mie Instan merupakan mie rebus instan rasa soto. Mie yang lembut dibalut bumbu soto yang lezat.",
+            "harga": 16500,
+            "harga_asli": 17000,
+            "stok": 5000,
+            "gambar": "https://down-id.img.susercontent.com/file/sg-11134201-22100-oz0rp9y1nriv91@resize_w900_nl.webp",
+            "kategori": "Makanan Instan"
+        },
+        {
+            "id": 11,
+            "nama": "Indomie Mi Instan Goreng Rendang 91 gr x 2",
+            "deskripsi": "Indomie Goreng Rendang 91gr merupakan mie instan tanpa kuah rasa rendang. Perpaduan antara mi dan bumbu otentik makanan khas Indonesia menjadikan Indomie goreng rendang makanan yang sangat spesial apalagi bila disajikan dikala cuaca dingin atau hujan.",
+            "harga": 6700,
+            "harga_asli": 6500,
+            "stok": 1500,
+            "gambar": "https://down-id.img.susercontent.com/file/8da554f728e2b597917889c48b748290@resize_w900_nl.webp",
+            "kategori": "Makanan Instan"
+        },
+        {
+            "id": 12,
+            "nama": "Mini Oreo Biskuit Original Pcs 20.4g Untuk Traveling X 10",
+            "deskripsi": "Biskuit Oreo memang sudah teruji kenikmatannya, biskuit yang renyah dan lezat ini selalu memberikan pengalaman makan yang seru. Oreo menciptakan sebuah produk yang baru yaitu Oreo Mini, yang merupakan sebuah biskuit yang mirip dengan Oreo tetapi berbentuk kecil yang lebih renyah dan berisi lebih banyak. Biarpun berukuran lebih kecil, Oreo Mini tetap memberikan rasa yang lezat dan kerenyahan biskuit yang nikmat. Terdapat empat varian rasa yaitu Vanilla, Strawberry, Mocha dan Chocolate yang sangat lezat dan manis. Oreo Mini juga cocok untuk dijadikan Topping disebuah makanan.",
+            "harga": 20000,
+            "harga_asli": 21500,
+            "stok": 500,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134207-7rasa-m3vxgrtaagilb8@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
         }
     ]
 }
