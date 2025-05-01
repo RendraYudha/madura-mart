@@ -51,7 +51,8 @@ $(document).ready(function() {
         // Format harga
         const formattedPrice = new Intl.NumberFormat('id-ID', {
             style: 'currency',
-            currency: 'IDR'
+            currency: 'IDR',
+            maximumFractionDigits: 0
         }).format(product.harga);
         
         // Update elemen HTML
@@ -94,7 +95,7 @@ $(document).ready(function() {
                 <h4 class="alert-heading">Terjadi Kesalahan</h4>
                 <p>${message}</p>
                 <hr>
-                <a href="produk.html" class="btn btn-outline-danger">
+                <a href="product.html" class="btn btn-outline-danger">
                     <i data-feather="arrow-left" class="me-2"></i>Kembali ke Daftar Produk
                 </a>
             </div>
