@@ -14,6 +14,7 @@ $(document).ready(function() {
                 }
 
                 renderProducts(data.produk);
+                initializeLiveSearch(data.produk); // Inisialisasi live search setelah data dimuat
             })
             .fail(function(jqXHR, textStatus, error) {
                 showError('Gagal memuat data produk: ' + textStatus);
@@ -37,7 +38,8 @@ $(document).ready(function() {
         products.forEach(product => {
             const formattedPrice = new Intl.NumberFormat('id-ID', {
                 style: 'currency',
-                currency: 'IDR'
+                currency: 'IDR',
+                maximumFractionDigits: 0
             }).format(product.harga);
 
             const hargaAsliFormatted = product.harga_asli ? 
@@ -73,7 +75,7 @@ $(document).ready(function() {
                                 </div>
                             </div>
                         </a>
-                        <div class="card-footer bg-transparent border-top-0">
+                        <div class="card-footer bg-transparent border-top-0 mt-auto">
                             <button class="btn btn-sm btn-outline-success w-100 add-to-cart" ${product.stok <= 0 ? 'disabled' : ''}>
                                 <i data-feather="shopping-cart" class="me-1"></i> Tambah ke Keranjang
                             </button>
@@ -142,6 +144,62 @@ $(document).ready(function() {
                     <i data-feather="info" class="me-2"></i>
                     Maaf, produk tidak tersedia saat ini.
                 </div>
+            </div>
+        `);
+        feather.replace();
+    }
+
+    // Fungsi untuk inisialisasi live search
+    function initializeLiveSearch(products) {
+        $('#liveSearch').on('input', function() {
+            try {
+                const searchTerm = $(this).val().toLowerCase();
+                console.log("Search term:", searchTerm);
+                
+                const filteredProducts = filterProducts(products, searchTerm);
+                console.log("Filtered products:", filteredProducts);
+                
+                renderProducts(filteredProducts);
+            } catch (error) {
+                console.error("Error in live search:", error);
+            }
+        });
+
+        console.log("Event listener live search berhasil dipasang");
+    }
+
+    // Fungsi untuk memfilter produk
+    function filterProducts(products, searchTerm) {
+        if (!searchTerm) return products;
+        
+        return products.filter(product => {
+            // Pastikan semua field yang diakses ada nilainya
+            return (
+                (product.nama && product.nama.toString().toLowerCase().includes(searchTerm)) ||
+                // (product.deskripsi && product.deskripsi.toString().toLowerCase().includes(searchTerm)) ||
+                (product.kategori && product.kategori.toString().toLowerCase().includes(searchTerm)) ||
+                (product.harga && product.harga.toString().includes(searchTerm))
+            );
+        });
+    }
+
+    // Fungsi untuk menampilkan pesan error
+    function showError(message) {
+        $('#productContainer').html(`
+            <div class="col-12 text-center py-5">
+                <i data-feather="alert-triangle" class="text-danger" width="48" height="48"></i>
+                <h4 class="mt-3">${message}</h4>
+            </div>
+        `);
+        feather.replace();
+    }
+
+    // Fungsi untuk menampilkan pesan kosong
+    function showEmptyMessage() {
+        $('#productContainer').html(`
+            <div class="col-12 text-center py-5">
+                <i data-feather="package" class="text-muted" width="48" height="48"></i>
+                <h4 class="mt-3">Tidak ada produk tersedia</h4>
             </div>
         `);
         feather.replace();
