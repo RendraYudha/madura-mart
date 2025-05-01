@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta author="Rendra Yudha Adi Kalla">
+        <title>MM | Madura Mart</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="js/script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        <style>
+            .hero-section {
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+                background-size: cover;
+                background-position: center;
+                color: white;
+                padding: 100px 0;
+                margin-bottom: 50px;
+            }
+            
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: #f8f9fa;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+            }
+            
+            .vision-mission-card {
+                border-left: 4px solid #20c997;
+                transition: transform 0.3s;
+            }
+            
+            .vision-mission-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .foundation-date {
+                font-size: 1.2rem;
+                color: #20c997;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="header">
+            <div class="top"></div>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/tes.png" alt="Logo" width="60" height="40">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link rounded-2" aria-current="page" href="index.html">Beranda</a>
+                            </li>
+                            <!-- <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form> -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link rounded-2 dropdown-toggle" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori Produk</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="product.html">Semua Produk</a></li>
+                                    <li><a class="dropdown-item" href="#">Makanan & Minuman</a></li>
+                                    <li><a class="dropdown-item" href="#">Sembako</a></li>
+                                    <li><a class="dropdown-item" href="#">Kebersihan</a></li>
+                                    <li><a class="dropdown-item" href="#">Peralatan Harian</a></li>
+                                    <li><a class="dropdown-item" href="#">Rumah Tangga</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link rounded-2" href="profile.html">Tentang Kami</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link rounded-2" href="index.html#kontak">Kontak</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link rounded-2" href=""><i data-feather="shopping-cart"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="hero-section text-center">
+            <div class="container" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="display-4 fw-bold mb-3">Madura Mart</h1>
+                <p class="lead">Warung Madura Modern untuk Kebutuhan Sehari-hari Anda</p>
+                <p class="foundation-date">Sejak 2025</p>
+            </div>
+        </section>
+
+        <!-- Profil Perusahaan -->
+        <section class="container mb-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="fw-bold mb-4">Tentang Kami</h2>
+                    <p class="lead">
+                        Madura Mart adalah toko serba ada yang menghadirkan kemudahan berbelanja dengan harga terjangkau. Kami berkomitmen menyediakan produk berkualitas, layanan cepat, dan pengalaman belanja yang menyenangkan untuk semua pelanggan.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fitur Unggulan -->
+        <section class="bg-light py-5 mb-5">
+            <div class="container" data-aos="fade-left" data-aos-duration="1000">
+                <h2 class="text-center fw-bold mb-5">Keunggulan Madura Mart</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="feature-icon">
+                            <i data-feather="shopping-bag" class="text-success" width="24" height="24"></i>
+                        </div>
+                        <h4 class="text-center">Produk Lengkap</h4>
+                        <p class="text-center">Dari sembako hingga bumbu khas Madura, semua tersedia dalam satu platform</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-icon">
+                            <i data-feather="clock" class="text-success" width="24" height="24"></i>
+                        </div>
+                        <h4 class="text-center">Pengiriman Cepat</h4>
+                        <p class="text-center">Pesanan Anda akan dikirim dengan cepat dan tepat waktu</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-icon">
+                            <i data-feather="award" class="text-success" width="24" height="24"></i>
+                        </div>
+                        <h4 class="text-center">Kualitas Terjamin</h4>
+                        <p class="text-center">Produk dengan kualitas terbaik langsung dari produsen terpercaya</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visi Misi -->
+        <section class="container mb-5" data-aos="fade-right" data-aos-duration="1000">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 vision-mission-card shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-success bg-opacity-10 p-3 rounded me-3">
+                                    <i data-feather="eye" class="text-success" width="24" height="24"></i>
+                                </div>
+                                <h3 class="mb-0">Visi</h3>
+                            </div>
+                            <p class="card-text">
+                                Menjadi platform belanja online terdepan yang menghadirkan pengalaman berbelanja ala warung Madura dengan kemudahan teknologi modern untuk memenuhi kebutuhan sehari-hari masyarakat Indonesia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 vision-mission-card shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-success bg-opacity-10 p-3 rounded me-3">
+                                    <i data-feather="target" class="text-success" width="24" height="24"></i>
+                                </div>
+                                <h3 class="mb-0">Misi</h3>
+                            </div>
+                            <ul>
+                                <li>Menyediakan produk kebutuhan sehari-hari dengan kualitas terbaik</li>
+                                <li>Mempertahankan cita rasa khas Madura dalam setiap produk</li>
+                                <li>Memberikan pelayanan terbaik dengan teknologi modern</li>
+                                <li>Mendukung UMKM lokal Madura untuk berkembang</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tim -->
+        <section class="container mb-5">
+            <h2 class="text-center fw-bold mb-5">Pendiri</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4" data-aos="flip-left" data-aos-duration="1000">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="https://ui-avatars.com/api/?name=Rendra+Yudha+Adi+Kalla&background=dc3545&color=fff&size=128" class="rounded-circle mb-3" alt="Rendra Yudha Adi Kalla">
+                            <h4>Rendra Yudha Adi Kalla</h4>
+                            <p class="text-muted">NIM. 23080574102</p>
+                            <p>Dengan semangat kewirausahaan dan kecintaan terhadap budaya Madura, kami menghadirkan Madura Mart untuk memenuhi kebutuhan masyarakat modern.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-left" data-aos-duration="1000">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="https://ui-avatars.com/api/?name=Wahyu+Putri+Aprilia&background=dc3545&color=fff&size=128" class="rounded-circle mb-3" alt="Wahyu Putri Aprilia">
+                            <h4>Wahyu Putri Aprilia</h4>
+                            <p class="text-muted">NIM. 23080574095</p>
+                            <p>Dengan semangat kewirausahaan dan kecintaan terhadap budaya Madura, kami menghadirkan Madura Mart untuk memenuhi kebutuhan masyarakat modern.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-left" data-aos-duration="1000">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="https://ui-avatars.com/api/?name=Naufal+Bagas+Taufiqur+Rohim&background=dc3545&color=fff&size=128" class="rounded-circle mb-3" alt="Naufal Bagas Taufiqur Rohim">
+                            <h4>Naufal Bagas Taufiqur Rohim</h4>
+                            <p class="text-muted">NIM. 23080574349</p>
+                            <p>Dengan semangat kewirausahaan dan kecintaan terhadap budaya Madura, kami menghadirkan Madura Mart untuk memenuhi kebutuhan masyarakat modern.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="footer">
+            <footer class="bg-dark text-white pt-5 pb-4">
+                <div class="container">
+                    <div class="row">
+                        <!-- Kolom Tentang -->
+                        <div class="col-lg-4 mb-4">
+                            <h5 class="text-success mb-4">
+                                <i data-feather="shopping-bag"></i> Madura Mart
+                            </h5>
+                            <p>Toko serba ada dengan harga terjangkau. Belanja lebih hemat, cepat, dan mudah dalam satu genggaman.</p>
+                            <div class="social-icons mt-4">
+                                <a href="#" class="text-white me-3"><i data-feather="facebook"></i></a>
+                                <a href="#" class="text-white me-3"><i data-feather="instagram"></i></a>
+                                <a href="#" class="text-white me-3"><i data-feather="twitter"></i></a>
+                                <a href="#" class="text-white"><i data-feather="youtube"></i></a>
+                            </div>
+                        </div>
+            
+                        <!-- Kolom Link Cepat -->
+                        <div class="col-lg-2 col-md-6 mb-4">
+                            <h5 class="text-success mb-4">Link Cepat</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="index.html" class="text-white text-decoration-none"><i data-feather="chevron-right" class="me-2"></i> Beranda</a></li>
+                                <li class="mb-2"><a href="product.html" class="text-white text-decoration-none"><i data-feather="chevron-right" class="me-2"></i> Produk</a></li>
+                                <li class="mb-2"><a href="profil.html" class="text-white text-decoration-none"><i data-feather="chevron-right" class="me-2"></i> Tentang Kami</a></li>
+                                <li><a href="contact.html" class="text-white text-decoration-none"><i data-feather="chevron-right" class="me-2"></i> Kontak</a></li>
+                            </ul>
+                        </div>
+            
+                        <!-- Kolom Kontak -->
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <h5 class="text-success mb-4">Hubungi Kami</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><a href="https://maps.app.goo.gl/f46ANiuGpykLVGEFA" class="text-white text-decoration-none" target="_blank"><i data-feather="map-pin" class="me-2"></i> Prodi Manajemen, FEB, UNESA</a></li>
+                                <li class="mb-3"><a href="mailto:rendra.23102@mhs.unesa.ac.id" class="text-white text-decoration-none" target="_blank"><i data-feather="mail" class="me-2"></i> rendra.23102@mhs.unesa.ac.id</a></li>
+                                <li class="mb-3"><a href="https://wa.me/6285731552077" class="text-white text-decoration-none" target="_blank"><i data-feather="phone" class="me-2"></i> (085) 731-552-077</a></li>
+                                <li><a href="#" class="text-white text-decoration-none"><i data-feather="clock" class="me-2"></i> Buka 24 jam</a></li>
+                            </ul>
+                        </div>
+            
+                        <!-- Kolom Newsletter -->
+                        <div class="col-lg-3 mb-4">
+                            <h5 class="text-success mb-4">Newsletter</h5>
+                            <p>Dapatkan promo dan penawaran spesial langsung ke email Anda.</p>
+                            <form class="mt-3">
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Email Anda" aria-label="Email Anda">
+                                    <button class="btn btn-success" type="submit"><i data-feather="send"></i></button>
+                                </div>
+                            </form>
+                            <div class="payment-methods mt-4">
+                                <h6 class="text-success mb-3">Metode Pembayaran</h6>
+                                <div class="d-flex flex-wrap">
+                                    <i data-feather="credit-card" class="me-3 mb-2"></i>
+                                    <i data-feather="dollar-sign" class="me-3 mb-2"></i>
+                                    <i data-feather="shopping-cart" class="me-3 mb-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <hr class="my-4 bg-secondary">
+            
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="mb-0">&copy; 2025 Madura Mart. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <p>Made with ❤️</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+
+        <script>
+            feather.replace();
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script>
+            document.querySelector('footer .mb-0').innerHTML = `&copy; ${new Date().getFullYear()} Madura Mart. All rights reserved.`;
+        </script>
+    </body>
+</html>
