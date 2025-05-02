@@ -142,7 +142,7 @@ $(document).on('click', '.add-to-cart', function(e) {
     console.log('Produk diklik:', { productId, productName, productPrice }); // Debug
     
     // 2. Ambil atau inisialisasi cart dari localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     
     // 3. Cek apakah produk sudah ada di cart
     const existingItem = cart.find(item => item.id === productId);
@@ -165,8 +165,8 @@ $(document).on('click', '.add-to-cart', function(e) {
     
     // 4. Simpan ke localStorage
     try {
-        localStorage.setItem('cart', JSON.stringify(cart));
-        console.log('Cart disimpan ke localStorage:', cart);
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        console.log('Cart disimpan ke sessionStorage:', cart);
         
         // 5. Update tampilan cart
         updateCartBadge();
@@ -194,7 +194,7 @@ $(document).on('click', '.add-to-cart', function(e) {
 
 // FUNGSI PENDUKUNG
 function updateCartBadge() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     $('#cartBadge').text(totalItems).toggle(totalItems > 0);
 }
@@ -317,7 +317,7 @@ function showToast(message, type = 'success') {
 
 // Fungsi utama untuk render cart
 function renderCartPage() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     const cartContainer = $('#cartItems');
     const totalContainer = $('#cartTotal');
     
@@ -380,7 +380,7 @@ function renderCartPage() {
 
 // Fungsi update cart badge (digunakan di semua halaman)
 function updateCartBadge() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     $('#cartBadge').text(totalItems).toggle(totalItems > 0);
 }
@@ -407,9 +407,9 @@ $(document).ready(function() {
         
         $(document).on('click', '.remove-item', function() {
             const productId = parseInt($(this).data('id'));
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
             cart = cart.filter(i => i.id !== productId);
-            localStorage.setItem('cart', JSON.stringify(cart));
+            sessionStorage.setItem('cart', JSON.stringify(cart));
             renderCartPage();
             updateCartBadge(); // Update badge setelah hapus item
         });
@@ -434,7 +434,7 @@ $(document).ready(function() {
             orderDate: new Date().toISOString()
         };
         
-        localStorage.setItem('customerData', JSON.stringify(customerData));
+        sessionStorage.setItem('customerData', JSON.stringify(customerData));
         
         // Redirect ke halaman pembayaran
         alert('Pesanan berhasil diproses!');
@@ -454,7 +454,7 @@ $(document).ready(function() {
 
 // Fungsi bantuan untuk update quantity
 function updateQuantity(productId, change) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     const item = cart.find(i => i.id === productId);
     
     if (item) {
@@ -464,7 +464,7 @@ function updateQuantity(productId, change) {
             cart = cart.filter(i => i.id !== productId);
         }
         
-        localStorage.setItem('cart', JSON.stringify(cart));
+        sessionStorage.setItem('cart', JSON.stringify(cart));
         updateCartBadge();
         
         if (window.location.pathname.includes('cart.html')) {
