@@ -30,7 +30,7 @@ $(document).ready(function() {
         return persentase;
     }
 
-    // Modifikasi bagian render product card
+    // Render product card
     function renderProducts(products) {
         const $productsContainer = $('#products-container');
         $productsContainer.empty();
@@ -76,7 +76,7 @@ $(document).ready(function() {
                             </div>
                         </a>
                         <div class="card-footer bg-transparent border-top-0 mt-auto">
-                            <button class="btn btn-sm btn-outline-success w-100 add-to-cart" ${product.stok <= 0 ? 'disabled' : ''}>
+                            <button class="btn btn-sm btn-outline-success w-100 add-to-cart" data-id="${product.id}" data-nama="${product.nama}" data-harga="${product.harga}" data-gambar="${product.gambar}" ${product.stok <= 0 ? 'disabled' : ''}>
                                 <i data-feather="shopping-cart" class="me-1"></i> Tambah ke Keranjang
                             </button>
                         </div>
@@ -87,37 +87,10 @@ $(document).ready(function() {
             $productsContainer.append(productCard);
         });
 
-        feather.replace();
-        
-        $('.add-to-cart').click(function(e) {
-            e.stopPropagation();
-            const productId = $(this).closest('.product-card').data('id');
-            addToCart(productId, 1);
-        });
-    }
-
-    // Fungsi untuk menambahkan ke keranjang
-    function addToCart(productId, quantity) {
-        // Simpan ke localStorage
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const existingItem = cart.find(item => item.id === productId);
-        
-        if (existingItem) {
-            existingItem.quantity += quantity;
-        } else {
-            cart.push({ id: productId, quantity: quantity });
+        // Inisialisasi ulang Feather Icons
+        if (typeof feather !== 'undefined') {
+            feather.replace();
         }
-        
-        localStorage.setItem('cart', JSON.stringify(cart));
-        
-        // Tampilkan notifikasi
-        Swal.fire({
-            icon: 'success',
-            title: 'Berhasil!',
-            text: 'Produk telah ditambahkan ke keranjang',
-            showConfirmButton: false,
-            timer: 1500
-        });
     }
 
     // Fungsi untuk menampilkan pesan error

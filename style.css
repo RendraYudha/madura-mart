@@ -156,3 +156,55 @@ footer a:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
+
+/* Style untuk cart */
+#cartBadge {
+    font-size: 0.7rem;
+    padding: 0.25em 0.4em;
+}
+
+.remove-item {
+    transition: all 0.3s ease;
+}
+
+.remove-item:hover {
+    transform: scale(1.1);
+}
+
+/* Animasi tambahan */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#checkoutForm {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Style untuk toast notifikasi */
+.cart-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    background: #28a745;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+.cart-toast.error {
+    background: #dc3545;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Style untuk tombol */
+.add-to-cart {
+    transition: all 0.3s ease;
+}
