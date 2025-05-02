@@ -345,8 +345,8 @@ function renderCartPage() {
                             class="cart-item-img" width="80">
                         <div class="flex-grow-1">
                             <h5>${item.name}</h5>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
+                            <div class="row">
+                                <div class="col-sm-2 col-md-4 col-lg-6">
                                     <span>Rp ${item.price.toLocaleString('id-ID')} × </span>
                                     <button class="btn btn-sm btn-outline-secondary decrease-qty" 
                                             data-id="${item.id}">-</button>
@@ -354,7 +354,7 @@ function renderCartPage() {
                                     <button class="btn btn-sm btn-outline-secondary increase-qty" 
                                             data-id="${item.id}">+</button>
                                 </div>
-                                <div>
+                                <div class="d-flex col-sm-2 col-md-4 col-lg-6 justify-content-end align-items-center">
                                     <span class="fw-bold">Rp ${itemTotal.toLocaleString('id-ID')}</span>
                                     <button class="btn btn-sm btn-danger ms-3 remove-item" 
                                             data-id="${item.id}">
