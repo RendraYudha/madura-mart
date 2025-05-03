@@ -61,7 +61,8 @@ $(document).ready(function() {
         $('#product-price').text(formattedPrice);
         $('#product-description').text(product.deskripsi || 'Deskripsi tidak tersedia');
         $('#product-stock').text(product.stok > 0 ? `Tersedia (${product.stok})` : 'Kosong');
-        $('#product-category').text(product.kategori || 'Umum');
+        $('#product-category').text(product.kategori || 'Kategori tidak tersedia');
+        $('#addToCart').attr('data-id', product.id).attr('data-nama', product.nama).attr('data-harga', product.harga).attr('data-gambar', product.gambar);
         
         // [DIMODIFIKASI] Tampilkan diskon jika ada
         if (discountPercentage > 0) {
@@ -104,3 +105,79 @@ $(document).ready(function() {
         feather.replace();
     }
 });
+
+$(document).on('click', '.btn-add-to-cart', function(e) {
+    e.preventDefault();
+
+    // Get data atribut dari atribut tombol
+    const productId = parseInt($(this).data('id'));
+    const productName = $(this).data('nama');
+    const productPrice = parseFloat($(this).data('harga'));
+    const productImage = $(this).data('gambar');
+    const quantity = parseInt($('.quantity-input').val()) || 1; // Default 1 jika hasilnya NaN
+
+    console.log('Tombol diklik');
+
+    // 2. Ambil atau inisialisasi cart dari sessionStorage
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    
+    // 3. Cek apakah produk sudah ada di cart
+    const existingItem = cart.find(item => item.id === productId);
+    
+    if (existingItem) {
+        // Jika sudah ada, tambah quantity
+        existingItem.quantity += 1;
+        console.log('Produk sudah ada, quantity ditambah:', existingItem);
+    } else {
+        // Jika belum ada, tambahkan produk baru
+        cart.push({
+            id: productId,
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: quantity
+        });
+        console.log('Produk baru ditambahkan ke cart:', cart[cart.length-1]);
+    }
+
+    // 4. Simpan ke sessionStorage
+    try {
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        console.log('Cart disimpan ke sessionStorage:', cart);
+        
+        // 5. Update tampilan cart
+        updateCartBadge();
+        showToast('Produk ditambahkan ke keranjang');
+        
+        // 6. Animasi feedback
+        // $(this).html('<i data-feather="shopping-cart"></i> Ditambahkan');
+        // $(this).prop('disabled', true);
+        
+        // setTimeout(() => {
+        //     $(this).html('<i data-feather="shopping-cart"></i> Tambah ke Keranjang');
+        //     $(this).prop('disabled', false);
+        // }, 1000);
+
+        // Inisialisasi ulang Feather Icons
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+        
+    } catch (error) {
+        console.error('Gagal menyimpan ke localStorage:', error);
+        showToast('Gagal menambahkan produk', 'error');
+    }
+});
+
+// FUNGSI PENDUKUNG
+function updateCartBadge() {
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    $('#cartBadge').text(totalItems).toggle(totalItems > 0);
+}
+
+function showToast(message, type = 'success') {
+    const toast = $(`<div class="cart-toast ${type}">${message}</div>`);
+    $('body').append(toast);
+    setTimeout(() => toast.fadeOut(() => toast.remove()), 2000);
+}

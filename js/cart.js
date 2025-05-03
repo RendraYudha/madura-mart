@@ -133,7 +133,7 @@
 $(document).on('click', '.add-to-cart', function(e) {
     e.preventDefault();
     
-    // 1. Ambil data produk dari atribut tombol
+    // Get data produk dari atribut tombol
     const productId = parseInt($(this).data('id'));
     const productName = $(this).data('nama');
     const productPrice = parseFloat($(this).data('harga'));
@@ -141,7 +141,7 @@ $(document).on('click', '.add-to-cart', function(e) {
     
     console.log('Produk diklik:', { productId, productName, productPrice }); // Debug
     
-    // 2. Ambil atau inisialisasi cart dari localStorage
+    // 2. Ambil atau inisialisasi cart dari sessionStorage
     let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     
     // 3. Cek apakah produk sudah ada di cart
@@ -163,7 +163,7 @@ $(document).on('click', '.add-to-cart', function(e) {
         console.log('Produk baru ditambahkan ke cart:', cart[cart.length-1]);
     }
     
-    // 4. Simpan ke localStorage
+    // 4. Simpan ke sessionStorage
     try {
         sessionStorage.setItem('cart', JSON.stringify(cart));
         console.log('Cart disimpan ke sessionStorage:', cart);
@@ -202,7 +202,7 @@ function updateCartBadge() {
 function showToast(message, type = 'success') {
     const toast = $(`<div class="cart-toast ${type}">${message}</div>`);
     $('body').append(toast);
-    setTimeout(() => toast.fadeOut(() => toast.remove()), 3000);
+    setTimeout(() => toast.fadeOut(() => toast.remove()), 2000);
 }
 
 // // FUNGSI UTAMA UNTUK MENAMPILKAN CART
@@ -316,67 +316,185 @@ function showToast(message, type = 'success') {
 // });
 
 // Fungsi utama untuk render cart
+// function renderCartPage() {
+//     const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+//     const cartContainer = $('#cartItems');
+//     const subtotalContainer = $('#subtotalProduct');
+    
+//     cartContainer.empty();
+    
+//     if (cart.length === 0) {
+//         cartContainer.html(`
+//             <div class="alert alert-info">
+//                 Keranjang belanja Anda kosong. <a href="product.html">Kembali berbelanja</a>
+//             </div>
+//         `);
+//         totalContainer.text('Rp 0');
+//     } else {
+//         let subTotal = 0;
+//         let cartHTML = '';
+        
+//         cart.forEach(item => {
+//             const itemsubTotal = item.price * item.quantity;
+//             subTotal += itemsubTotal;
+            
+//             cartHTML += `
+                // <div class="cart-item mb-3 p-3 border rounded">
+                //     <div class="d-flex gap-3">
+                //         <img src="${item.image}" alt="${item.name}" 
+                //             class="cart-item-img" width="80">
+                //         <div class="flex-grow-1">
+                //             <h5>${item.name}</h5>
+                //             <div class="row">
+                //                 <div class="col-sm-2 col-md-4 col-lg-6">
+                //                     <span>Rp ${item.price.toLocaleString('id-ID')} × </span>
+                //                     <button class="btn btn-sm btn-outline-secondary decrease-qty" 
+                //                             data-id="${item.id}">-</button>
+                //                     <span class="mx-2">${item.quantity}</span>
+                //                     <button class="btn btn-sm btn-outline-secondary increase-qty" 
+                //                             data-id="${item.id}">+</button>
+                //                 </div>
+                //                 <div class="d-flex col-sm-2 col-md-4 col-lg-6 justify-content-end align-items-center">
+                //                     <span class="fw-bold">Rp ${itemsubTotal.toLocaleString('id-ID')}</span>
+                //                     <button class="btn btn-sm btn-danger ms-3 remove-item" 
+                //                             data-id="${item.id}">
+                //                         <i data-feather="trash-2"></i>
+                //                     </button>
+                //                 </div>
+                //             </div>
+                //         </div>
+                //     </div>
+                // </div>
+//             `;
+//         });
+        
+//         cartContainer.html(cartHTML);
+//         subtotalContainer.text(`Rp${subTotal.toLocaleString('id-ID')}`);
+//     }
+    
+//     // Inisialisasi ulang Feather Icons
+//     if (typeof feather !== 'undefined') {
+//         feather.replace();
+//     }
+// }
+
 function renderCartPage() {
+    // 1. Ambil data dari storage
     const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
-    const cartContainer = $('#cartItems');
-    const totalContainer = $('#cartTotal');
+    const promoCode = sessionStorage.getItem('promoCode') || '';
     
-    cartContainer.empty();
-    
+    // 2. Inisialisasi variabel
+    let subTotal = 0;
+    const serviceFee = 4000;
+    let discount = 0;
+    let isValidPromo = false; // Flag untuk validitas promo
+
+    // 3. Daftar promo valid
+    const validPromos = {
+        'DISKON10': 0.1,    // Disc 10%
+        'HEMAT20': 0.2,     // Disc 20%
+        'CASHBACK5K': 5000,  // Disc flat Rp 5.000
+        'MN23K': 0.5        // Disc 50%
+    };
+
+    // 4. Handle keranjang kosong
     if (cart.length === 0) {
-        cartContainer.html(`
+        $('#cartItems').html(`
             <div class="alert alert-info">
-                Keranjang belanja Anda kosong. <a href="product.html">Kembali berbelanja</a>
+                Keranjang belanja kosong. <a href="product.html">Belanja sekarang</a>
             </div>
         `);
-        totalContainer.text('Rp 0');
-    } else {
-        let total = 0;
-        let cartHTML = '';
+        $('#subtotalProduct, #cartTotal').text('Rp 0');
+        $('#discountRow').hide(); // Pastikan baris diskon tersembunyi
+        return;
+    }
+
+    // 5. Hitung subtotal dan render item
+    let cartHTML = '';
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subTotal += itemTotal;
         
-        cart.forEach(item => {
-            const itemTotal = item.price * item.quantity;
-            total += itemTotal;
-            
-            cartHTML += `
-                <div class="cart-item mb-3 p-3 border rounded">
-                    <div class="d-flex gap-3">
-                        <img src="${item.image}" alt="${item.name}" 
-                            class="cart-item-img" width="80">
-                        <div class="flex-grow-1">
-                            <h5>${item.name}</h5>
-                            <div class="row">
-                                <div class="col-sm-2 col-md-4 col-lg-6">
-                                    <span>Rp ${item.price.toLocaleString('id-ID')} × </span>
-                                    <button class="btn btn-sm btn-outline-secondary decrease-qty" 
-                                            data-id="${item.id}">-</button>
-                                    <span class="mx-2">${item.quantity}</span>
-                                    <button class="btn btn-sm btn-outline-secondary increase-qty" 
-                                            data-id="${item.id}">+</button>
-                                </div>
-                                <div class="d-flex col-sm-2 col-md-4 col-lg-6 justify-content-end align-items-center">
-                                    <span class="fw-bold">Rp ${itemTotal.toLocaleString('id-ID')}</span>
-                                    <button class="btn btn-sm btn-danger ms-3 remove-item" 
-                                            data-id="${item.id}">
-                                        <i data-feather="trash-2"></i>
-                                    </button>
-                                </div>
+        cartHTML += `
+            <div class="cart-item mb-3 p-3 border rounded">
+                <div class="d-flex gap-3">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-img" width="80">
+                    <div class="flex-grow-1">
+                        <h5>${item.name}</h5>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <span>Rp ${item.price.toLocaleString('id-ID')}</span>
+                                <button class="btn btn-sm btn-outline-secondary decrease-qty" data-id="${item.id}">-</button>
+                                <span class="mx-2">${item.quantity}</span>
+                                <button class="btn btn-sm btn-outline-secondary increase-qty" data-id="${item.id}">+</button>
+                            </div>
+                            <div class="col-sm-6 d-flex justify-content-end align-items-center">
+                                <span class="fw-bold">Rp ${itemTotal.toLocaleString('id-ID')}</span>
+                                <button class="btn btn-sm btn-danger ms-3 remove-item" data-id="${item.id}">
+                                    <i data-feather="trash-2"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
-            `;
-        });
+            </div>
+        `;
+    });
+
+    // 6. Validasi kode promo
+    if (promoCode && validPromos[promoCode]) {
+        isValidPromo = true;
+        const promo = validPromos[promoCode];
         
-        cartContainer.html(cartHTML);
-        totalContainer.text(`Rp ${total.toLocaleString('id-ID')}`);
+        // Hitung diskon
+        discount = typeof promo === 'number' && promo < 1 
+            ? subTotal * promo      // Diskon persentase
+            : promo;                // Diskon nominal
+        
+        $('#promoMessage')
+            .text(`Diskon berhasil diterapkan!`)
+            .removeClass('d-none text-danger')
+            .addClass('text-success');
+    } else if (promoCode) {
+        // Kode tidak valid
+        $('#promoMessage')
+            .text("Kode promo tidak valid")
+            .removeClass('d-none text-success')
+            .addClass('text-danger');
+        sessionStorage.removeItem('promoCode'); // Hapus kode invalid
     }
+
+    // 7. Update tampilan
+    $('#cartItems').html(cartHTML);
+    $('#subtotalProduct').text(`Rp ${subTotal.toLocaleString('id-ID')}`);
+    $('#cartTotal').text(`Rp ${(subTotal + serviceFee - discount).toLocaleString('id-ID')}`);
     
-    // Inisialisasi ulang Feather Icons
-    if (typeof feather !== 'undefined') {
-        feather.replace();
+    // 8. Tampilkan diskon HANYA jika promo valid
+    if (isValidPromo) {
+        $('#discountValue').text(`-Rp ${discount.toLocaleString('id-ID')}`);
+        $('#discountRow').show();
+    } else {
+        $('#discountRow').hide(); // Pastikan disembunyikan
     }
+
+    // 9. Inisialisasi Feather Icons
+    if (typeof feather !== 'undefined') feather.replace();
 }
+
+$(document).ready(function() {
+    // Hapus kode promo saat halaman dimuat ulang
+    sessionStorage.removeItem('promoCode');
+    
+    // Kemudian render keranjang
+    renderCartPage();
+});
+
+// Fungsi untuk menerapkan promo (taruh di bagian lain script)
+$('#applyPromo').click(function() {
+    const promoCode = $('#promoCode').val();
+    sessionStorage.setItem('promoCode', promoCode);
+    renderCartPage(); // Render ulang keranjang
+});
 
 // Fungsi update cart badge (digunakan di semua halaman)
 function updateCartBadge() {
@@ -417,8 +535,17 @@ $(document).ready(function() {
 
     // Proses pesanan (di cart.html)
     $('#processBtn').on('click', function() {
-        $('#checkoutForm').show();
-        $(this).hide();
+        // Ambil nilai subtotal dari teks (format: "Rp 20.400" -> 20400)
+        const subtotalText = $('#subtotalProduct').text().replace(/\D/g, '');
+        const subtotal = parseInt(subtotalText) || 0;
+
+        if (subtotal > 0) {
+            $('#checkoutForm').show();
+            $(this).hide();
+        } else {
+            // Tampilkan alert jika keranjang kosong
+            alert('Keranjang belanja Anda masih kosong. Silakan tambahkan produk terlebih dahulu!');
+        }
     });
     
     // Submit form checkout (di cart.html)
