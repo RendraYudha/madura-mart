@@ -184,7 +184,7 @@ footer a:hover {
 /* Style untuk toast notifikasi */
 .cart-toast {
     position: fixed;
-    top: 20px;
+    top: 80px;
     right: 20px;
     padding: 12px 24px;
     background: #28a745;
