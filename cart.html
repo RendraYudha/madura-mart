@@ -102,24 +102,32 @@
                             <h4>Data Pelanggan</h4>
                         </div>
                         <div class="card-body">
-                            <form id="customerForm">
+                            <form id="customerForm" name="submit-to-google-sheet">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="name" required>
+                                    <input type="text" class="form-control" id="name" name="nama" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" required>
+                                    <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">No. Telepon</label>
-                                    <input type="tel" class="form-control" id="phone" required>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="address" class="form-label">Alamat</label>
-                                    <textarea class="form-control" id="address" rows="3" required></textarea>
+                                    <textarea class="form-control" id="address" rows="3" name="alamat" required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-danger">Checkout</button>
+                                <div class="mb-3">
+                                    <label for="total" class="form-label">Tagihan</label>
+                                    <input class="form-control" id="total" rows="3" name="total" value="" readonly></input>
+                                </div>
+                                <div class="mb-3" style="display: none;">
+                                    <label for="order_id" class="form-label">ID</label>
+                                    <input class="form-control" id="order_id" rows="3" name="order_id" value="" readonly></input>
+                                </div>
+                                <button type="submit" class="btn btn-danger" id="checkoutBtn">Checkout</button>
                             </form>
                         </div>
                     </div>
@@ -214,5 +222,51 @@
         <script>
             document.querySelector('footer .mb-0').innerHTML = `&copy; ${new Date().getFullYear()} Madura Mart. All rights reserved.`;
         </script>
+        <!-- <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzLAbORBS6j1pUw7vzHIktwmU0kKxfUA2cWUTmvK7DDZQR0_Fo2IUTcq8EXFXStzTHc6w/exec'
+            const form = document.forms['submit-to-google-sheet']
+        
+            form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+            })
+        </script> -->
+
+        <!-- <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzLAbORBS6j1pUw7vzHIktwmU0kKxfUA2cWUTmvK7DDZQR0_Fo2IUTcq8EXFXStzTHc6w/exec';
+        
+            document.forms['submit-to-google-sheet'].addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Ambil data dari sessionStorage dan form
+                const cartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
+                const formData = Object.fromEntries(new FormData(e.target));
+                
+                // Kirim per produk (satu produk = satu baris)
+                try {
+                    for (const product of cartItems) {
+                    const payload = {
+                        customer: formData,      // Data pelanggan sama untuk semua produk
+                        product: product,       // Data produk per item
+                        orderDate: new Date().toISOString(),
+                        subtotal: product.price * product.quantity
+                    };
+
+                    await fetch(scriptURL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    }
+                    
+                    alert('Semua produk berhasil disimpan!');
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Gagal menyimpan data!');
+                }
+            });
+        </script> -->
     </body>
 </html>

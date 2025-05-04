@@ -394,7 +394,7 @@ function renderCartPage() {
         'DISKON10': 0.1,    // Disc 10%
         'HEMAT20': 0.2,     // Disc 20%
         'CASHBACK5K': 5000,  // Disc flat Rp 5.000
-        'MN23K': 0.5        // Disc 50%
+        '66MADURAMART': 0.5        // Disc 50%
     };
 
     // 4. Handle keranjang kosong
@@ -468,6 +468,9 @@ function renderCartPage() {
     $('#cartItems').html(cartHTML);
     $('#subtotalProduct').text(`Rp ${subTotal.toLocaleString('id-ID')}`);
     $('#cartTotal').text(`Rp ${(subTotal + serviceFee - discount).toLocaleString('id-ID')}`);
+
+    const totalTagihan = subTotal + serviceFee - discount;
+    $('#total').val(`Rp ${totalTagihan.toLocaleString('id-ID')}`);
     
     // 8. Tampilkan diskon HANYA jika promo valid
     if (isValidPromo) {
@@ -477,7 +480,7 @@ function renderCartPage() {
         $('#discountRow').hide(); // Pastikan disembunyikan
     }
 
-    // 9. Inisialisasi Feather Icons
+    // 10. Inisialisasi Feather Icons
     if (typeof feather !== 'undefined') feather.replace();
 }
 
@@ -502,6 +505,22 @@ function updateCartBadge() {
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     $('#cartBadge').text(totalItems).toggle(totalItems > 0);
 }
+
+function generateOrderId() {
+    // Karakter yang digunakan
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*';
+    let orderId = '';
+    
+    // Generate 5 karakter acak
+    for (let i = 0; i < 5; i++) {
+      orderId += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    
+    return orderId;
+}
+
+const orderIdentification = generateOrderId();
+$('#order_id').val(orderIdentification);
 
 // Event listeners global
 $(document).ready(function() {
@@ -554,10 +573,12 @@ $(document).ready(function() {
         
         // Simpan data customer
         const customerData = {
-            name: $('#name').val(),
-            email: $('#email').val(),
-            phone: $('#phone').val(),
-            address: $('#address').val(),
+            customerOrderId: $('#order_id').val(),
+            customerName: $('#name').val(),
+            customerEmail: $('#email').val(),
+            customerPhone: $('#phone').val(),
+            customerAddress: $('#address').val(),
+            customerTagihan: $('#total').val(),
             orderDate: new Date().toISOString()
         };
         
