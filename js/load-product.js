@@ -53,7 +53,7 @@ $(document).ready(function() {
                 calculateDiscountPercentage(product.harga_asli, product.harga) : 0;
 
             const productCard = `
-                <div class="col-md-4 col-lg-2 mb-4">
+                <div class="col-sm-6 col-md-4 col-lg-2 mb-4">
                     <div class="card h-100 product-card">
                         <a href="detail-produk.html?id=${product.id}" class="text-decoration-none text-dark card-link">
                             ${diskonPercentage > 0 ? 
