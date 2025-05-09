@@ -568,7 +568,7 @@ $(document).ready(function() {
     });
     
     // Submit form checkout (di cart.html)
-    $('#customerForm').on('submit', function(e) {
+    $('#customerForm').on('submit', async function(e) {
         e.preventDefault();
         
         // Simpan data customer
@@ -584,8 +584,31 @@ $(document).ready(function() {
         
         sessionStorage.setItem('customerData', JSON.stringify(customerData));
         
+        const cartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+        try {
+            const response = await fetch('php/placeOrder.php', {
+                method: 'POST',
+                body: JSON.stringify({
+                    customer: customerData,
+                    items: cartItems
+                })
+            });
+            
+            const token = await response.text();
+            
+            if (token) {
+                window.snap.pay(token); // Redirect ke Midtrans
+            } else {
+                throw new Error('Token pembayaran tidak diterima');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Gagal memproses pembayaran: ' + error.message);
+        }
+
         // Redirect ke halaman pembayaran
-        alert('Pesanan berhasil diproses!');
+        // alert('Pesanan berhasil diproses!');
         // window.location.href = 'payment.html';
     });
     
