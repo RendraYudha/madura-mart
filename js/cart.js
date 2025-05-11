@@ -468,9 +468,12 @@ function renderCartPage() {
     $('#cartItems').html(cartHTML);
     $('#subtotalProduct').text(`Rp ${subTotal.toLocaleString('id-ID')}`);
     $('#cartTotal').text(`Rp ${(subTotal + serviceFee - discount).toLocaleString('id-ID')}`);
+    $('#totalInteger').val((subTotal + serviceFee - discount));
+    $('#totalFormatted').val(`Rp ${(subTotal + serviceFee - discount).toLocaleString('id-ID')}`);
 
-    const totalTagihan = subTotal + serviceFee - discount;
-    $('#total').val(`Rp ${totalTagihan.toLocaleString('id-ID')}`);
+    // const totalTagihan = subTotal + serviceFee - discount;
+    // $('#total').val(`Rp ${totalTagihan.toLocaleString('id-ID')}`);
+    // $('#total').val(totalTagihan);
     
     // 8. Tampilkan diskon HANYA jika promo valid
     if (isValidPromo) {
@@ -578,7 +581,7 @@ $(document).ready(function() {
             customerEmail: $('#email').val(),
             customerPhone: $('#phone').val(),
             customerAddress: $('#address').val(),
-            customerTagihan: $('#total').val(),
+            customerTagihan: $('#totalInteger').val(),
             orderDate: new Date().toISOString()
         };
         
@@ -599,6 +602,7 @@ $(document).ready(function() {
             
             if (token) {
                 window.snap.pay(token); // Redirect ke Midtrans
+                sessionStorage.clear();
             } else {
                 throw new Error('Token pembayaran tidak diterima');
             }

@@ -64,14 +64,14 @@
                 <div class="card mt-3">
                     <div class="card-body">
                         <!-- 1. Form Input Kode Promo -->
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <label for="promoCode" class="form-label">Kode Promo</label>
                             <div class="input-group">
                             <input type="text" class="form-control" id="promoCode" placeholder="Masukkan kode promo">
                             <button class="btn btn-outline-secondary" type="button" id="applyPromo">Gunakan</button>
                             </div>
                             <div id="promoMessage" class="text-success mt-1 small"></div>
-                        </div>
+                        </div> -->
                     
                         <!-- 2. Subtotal Harga Produk -->
                         <div class="border-bottom pb-2 mb-2">
@@ -79,15 +79,15 @@
                                 <span>Subtotal Produk</span>
                                 <span id="subtotalProduct">Rp 0</span>
                             </div>
-                            <div class="d-flex justify-content-between">
+                            <!-- <div class="d-flex justify-content-between">
                                 <span>Biaya Layanan</span>
                                 <span id="serviceFee">Rp 4.000</span>
-                            </div>
+                            </div> -->
                             <!-- 3. Keterangan Diskon (Muncul jika ada promo) -->
-                            <div class="d-flex justify-content-between text-danger mb-2" id="discountRow" style="display: none !important;">
+                            <!-- <div class="d-flex justify-content-between text-danger mb-2" id="discountRow" style="display: none !important;">
                                 <span>Diskon Promo</span>
                                 <span id="discountValue">-Rp 0</span>
-                            </div>
+                            </div> -->
                         </div>
 
                         <h5 class="card-title">Total Pembayaran</h5>
@@ -122,7 +122,11 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="total" class="form-label">Tagihan</label>
-                                    <input class="form-control" id="total" rows="3" name="total" value="" readonly></input>
+                                    <input class="form-control" id="totalFormatted" rows="3" name="totalFormatted" value="" readonly></input>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="total2" class="form-label">Tagihan</label>
+                                    <input class="form-control" id="totalInteger" rows="3" name="totalInteger" value="" readonly></input>
                                 </div>
                                 <div class="mb-3" style="display: none;">
                                     <label for="order_id" class="form-label">ID</label>

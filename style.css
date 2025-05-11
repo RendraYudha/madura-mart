@@ -43,25 +43,6 @@ body {
     padding-bottom: 120px; /* Sesuaikan dengan tinggi wave */
 }
 
-/* Wave transisi yang benar */
-.wave-transition {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    /* Hapus transform: rotate(180deg) */
-}
-
-.wave-transition svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 120px; /* Sesuaikan tinggi wave sesuai kebutuhan */
-    transform: rotate(180deg); /* Jika memang perlu dibalik, pindahkan ke sini */
-}
-
 /* Untuk konten di atas wave */
 .container-fluid.py-5 {
     position: relative;

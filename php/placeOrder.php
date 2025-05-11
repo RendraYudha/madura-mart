@@ -33,7 +33,7 @@ if (empty($postData['customer'])) {
 $params = array(
     'transaction_details' => array(
         'order_id' => $postData['customer']['customerOrderId'],
-        'gross_amount' => 10000,
+        'gross_amount' => $postData['customer']['customerTagihan']
     ),
     'item_details' => array_map(function ($item) {
         return [
@@ -62,7 +62,3 @@ try {
     header('HTTP/1.1 500 Internal Server Error');
     echo json_encode(['error' => $e->getMessage()]);
 }
-
-
-// $snapToken = \Midtrans\Snap::getSnapToken($params);
-// echo $snapToken;
