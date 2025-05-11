@@ -119,6 +119,286 @@
             "stok": 500,
             "gambar": "https://down-id.img.susercontent.com/file/id-11134207-7rasa-m3vxgrtaagilb8@resize_w900_nl.webp",
             "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 13,
+            "nama": "Monde Snack Gold 27g",
+            "deskripsi": "Cemilan lezat yang terbuat dari beras berkualitas baik , jagung , kacang kedelai dan telur . tekstur lembut dan rasa nikmat bisa dinikmati oleh semua kalangan baik muda ataupun tua.",
+            "harga": 2400,
+            "harga_asli": 2500,
+            "stok": 510,
+            "gambar": "https://down-id.img.susercontent.com/file/537b1576df87ca021d11590852f804b5@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 14,
+            "nama": "Nissin Wallens Choco Soes 2 x 100 gr",
+            "deskripsi": "NISSIN hadir di tengah kebersamaan Anda dengan selalu menghadirkan varian camilan yang menggoda selera. Seperti produk NISSIN yang satu ini, soes kering dengan krim coklat hadir dalam NISSIN Walens Soes Chocolate 100 gr. Kue soes imut yang kering di bagian luar dan begitu creamy di bagian dalamnya memberikan sensasi coklat yang segar, lumer di lidah ketika Anda menggigitnya. Soes kering dengan bahan alami tanpa pewarna buatan ini sangat aman dikonsumsi untuk seluruh keluarga tercinta. Kemasan isi 100 gr NISSIN ini tidak cukup dibeli hanya satu dengan rasa yang membuat Anda ingin terus menggigit dan merasakan lumernya coklat.",
+            "harga": 21400,
+            "harga_asli": 25000,
+            "stok": 110,
+            "gambar": "https://down-id.img.susercontent.com/file/6ac8334e702d4c9de27bfaf76ce7b3a7@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 15,
+            "nama": "Selamat Wafer Chocolate 145 gr",
+            "deskripsi": "NISSIN hadir di tengah kebersamaan Anda dengan selalu menghadirkan varian camilan yang menggoda selera. Seperti produk NISSIN yang satu ini, soes kering dengan krim coklat hadir dalam NISSIN Walens Soes Chocolate 100 gr. Kue soes imut yang kering di bagian luar dan begitu creamy di bagian dalamnya memberikan sensasi coklat yang segar, lumer di lidah ketika Anda menggigitnya. Soes kering dengan bahan alami tanpa pewarna buatan ini sangat aman dikonsumsi untuk seluruh keluarga tercinta. Kemasan isi 100 gr NISSIN ini tidak cukup dibeli hanya satu dengan rasa yang membuat Anda ingin terus menggigit dan merasakan lumernya coklat.",
+            "harga": 13250,
+            "harga_asli": 14600,
+            "stok": 10,
+            "gambar": "https://down-id.img.susercontent.com/file/9994a786fdb0f9cde9f063201c68b720@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 16,
+            "nama": "Japota Potato Chips Happy Honey Butter 3 x 35 gr Triple Pack",
+            "deskripsi": "Japota Happy Honey Butter terbuat dari kentang asli, diolah menggunakan thin-cut technology yang bikin asli krenyesnya! Perpaduan asin, manis, gurih dari madu mentega dengan chips yang tipis, bikin rasanya hype abis! So Unique! Mau dimakan sendirian atau bareng teman, dijamin kamu gak bakal bisa nolak enaknya Japota Happy Honey Butter.",
+            "harga": 15000,
+            "harga_asli": 16300,
+            "stok": 100,
+            "gambar": "https://down-id.img.susercontent.com/file/sg-11134201-22120-ho5lyu2msklv99@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 17,
+            "nama": "Hello Panda Strawberry 25gr x 5 pcs",
+            "deskripsi": "NBiskuit renyah dengan 100 macam karakter bentuk panda, berisi krim stroberi lezat yang bisa menaikkan mood kamu dengan satu kali gigitan. Jadikan Meiji Hello Panda sebagai camilan di tengah rasa bosan.",
+            "harga": 16000,
+            "harga_asli": 16500,
+            "stok": 100,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134201-7rasi-m2m8u1m1ovw2da@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 18,
+            "nama": "Khong Guan Superco Biskuit Cokelat 2 x 138 gr",
+            "deskripsi": "Merupakan crackers dengan isi krim coklat, yang kelezatan dan kerenyahannya pas di lidah Anda. Khong Guan Superco memiliki tekstur yang renyah dengan isi krim coklat yang lembut sehingga membuat Anda ketagihan untuk terus memakannya. Cracker isi coklat dari Khong Guan terbuat dari berbagai macam bahan-bahan pilihan sehingga kualitas rasa dan kerenyahan dari Khong Guan Superco tetap terjaga sejak dahulu. Superco Chocolate cocok disajikan di acara-acara istimewa seperti teman saat nonton tv, teman saat perjalanan dan menemani waktu ngobrol Anda serta dikemas dalam kemasan praktis sehingga cocok dinikmati kapanpun dan dimanapun.",
+            "harga": 17000,
+            "harga_asli": 17900,
+            "stok": 110,
+            "gambar": "https://down-id.img.susercontent.com/file/03ef155d422638851ef78db68f93faa3@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 19,
+            "nama": "Japota Keripik Kentang Seaweed 68 gr x 2",
+            "deskripsi": "Japota Potato Chip dengan rasa Umami Seaweed mampu menemanimu dalam segala suasana. Dengan potongan super tipis yang renyah, terbuat dari bahan pilihan tanpa pengawet buatan.",
+            "harga": 18500,
+            "harga_asli": 19550,
+            "stok": 80,
+            "gambar": "https://down-id.img.susercontent.com/file/sg-11134201-22120-ye8prmvmsklv4e@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 20,
+            "nama": "Japota Keripik Kentang Nipis Pedas 68gr",
+            "deskripsi": "Japota Sambal Bawang adalah keripik kentang yang terbuat dari kentang asli yang dipotong menggunakan thin-cut technology, bikin chipsnya Japota tipis krenyess, ditambah segarnya taburan bits daun jeruk asli, bikin pedasnya #GakCukupSatu",
+            "harga": 9000,
+            "harga_asli": 11200,
+            "stok": 610,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134207-7r98q-lyd83yssopbc40@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 21,
+            "nama": "Nissin Crispy Crackers 2 x 225 gr",
+            "deskripsi": "Nissin Crispy Crackers [225 g], Terbuat dari tepung terigu dan keju asli. Diproses dengan dipanggang, bukan digoreng sehingga lebih nikmat. Ideal dinikmati saat santai bersama keluarga dan kerabat.",
+            "harga": 2200,
+            "harga_asli": 26000,
+            "stok": 550,
+            "gambar": "https://down-id.img.susercontent.com/file/f3cfc2ee1df7317af18a958d2cd76058@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 22,
+            "nama": "Roma Marie Susu 115gr x 2 pcs",
+            "deskripsi": "Roma mengeluarkan produk biskuit terbarunya, yaitu Marie Susu yang renyah dan lezat. Biskuit ini yang terbuat dari bahan terbaik dan diproses dengan sangat steril dalam pembuatannya, sehingga tetap menjaga kualitas dari biskuit ini. Dengan rasa susu yang khas dari biskuit ini membuat anak-anak sangat menggemarinya. Biskuit ini dapat ditemani dengan secangkir teh hangat ataupun susu coklat. Biskuit Marie Susu ini sangat cocok menjadi cemilan saat bersantai. Dikemas dengan praktis, wafer ini dapat dibawa kemanapun menemani di setiap hari Anda.",
+            "harga": 20000,
+            "harga_asli": 20600,
+            "stok": 250,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134201-7rase-m3os3yijq8yc24@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 23,
+            "nama": "Tamarin Permen Sari Asam Zak 108gr x 2 pcs",
+            "deskripsi": "Tamarin, permen dari Mayora adalah permen yang dibuat dari sari asem yang menyegarkan dan menyehatkan, permen yang luar biasa. Permen yang mempunyai rasa asem yang segar dan nikmat yang bisa memberikan kesegaran yang penuh.",
+            "harga": 17650,
+            "harga_asli": 20000,
+            "stok": 560,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134201-7rase-m3os3jvn592555@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 24,
+            "nama": "Cha Cha Permen Cokelat Mini Tube Hat Mix 37 gr x 3 Pcs",
+            "deskripsi": "Delfi ChaCha Minis Milk Chocolate, cokelat susu disalut permen warna-warni berukuran mini.",
+            "harga": 23500,
+            "harga_asli": 24900,
+            "stok": 150,
+            "gambar": "https://down-id.img.susercontent.com/file/7c63ced27b158d2f5a7d6f2e73f5a55c@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 25,
+            "nama": "Mayasi ala Kacang Jepang Rasa Bawang 65gr x 3 pcs",
+            "deskripsi": "Vinisi Chunk Light Tuna 160gr merupakan potongan-potongan daging tuna dalam kaleng yang siap diolah menjadi segala macam masakan.",
+            "harga": 30200,
+            "harga_asli": 34000,
+            "stok": 500,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134201-7ras8-m49pfcnrm6ja48@resize_w900_nl.webp",
+            "kategori": "Makanan Ringan"
+        },
+        {
+            "id": 26,
+            "nama": "Biskuat Biskuit Original 2 x 106.4 gr",
+            "deskripsi": "BISKUAT Original 106.4g merupakan produk makanan ringan berupa biskuit yang diproduksi oleh Mondelez Indonesia. BISKUAT ENERGI terbuat dari perpaduan susu dan gandum yang menyatu dan menghasilkan sebuah biskuit yang enak, lezat, dan menyehatkan. Dikatakan menyehatkan, karena BISKUAT Original ini telah diperkaya dengan kandungan 9 vitamin dan 6 mineral yang baik bagi tubuh. Tekstur biskuitnya begitu gurih ketika dikunyah di dalam mulut. Rasa susunya juga begitu nikmat. Rasakan kenikmatan biskuit BISKUAT Original di setiap waktu luang Anda. Dikemas dalam kemasan plastik sederhana dan mudah disobek untuk kamu nikmati kapan saja dan di mana saja. Makanan ringan ini dapat dikonsumsi oleh semua golongan usia. Enak juga disajikan bersama teh, kopi, atau susu kesukaan kamu.",
+            "harga": 16400,
+            "harga_asli": 18000,
+            "stok": 0,
+            "gambar": "https://down-id.img.susercontent.com/file/sg-11134201-7qvd1-lhr4qt2ehq0eca@resize_w900_nl.webp",
+            "kategori": "Makanan Kaleng"
+        },
+        {
+            "id": 27,
+            "nama": "Totole Kaldu Rasa Jamur 80gr",
+            "deskripsi": "Totole Kaldu Rasa Jamur merupakan kaldu jamur pengganti kaldu daging, kaldu jenis baru yang dapat dinikmati oleh vegetarian maupun non vegetarian untuk pola makan sehat karena mengandung banyak vitamin B, zat besi, antioksidan, dan dapat meningkatkan sistem kekebalan tubuh.",
+            "harga": 12000,
+            "harga_asli": 13000,
+            "stok": 50,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134201-7r98p-lz4hnk9nhy3ic0@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 28,
+            "nama": "Bango Kecap Manis Refill Pouch Besar 700G",
+            "deskripsi": "Bango kecap manis Soy Sauce Refill 520 mL dibuat sepenuh hati dari perpaduan tepat bahan pilihan berkualitas dari alam: kedelai hitam Mallika, gula, garam dan air. Ciptakan rasa yang benar-benar kecap. Karena rasa tak pernah bohong.",
+            "harga": 26500,
+            "harga_asli": 28000,
+            "stok": 300,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m8bbbhp38u9k43@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 29,
+            "nama": "Royco Bumbu Penyedap Makanan Rasa Kaldu Sapi 220 gr",
+            "deskripsi": "Royco Bumbu Penyedap Makanan Rasa Kaldu Sapi 220 gr merupakan bumbu pelezat masakan yang terbuat dari bahan-bahan dan rempah pilihan, termasuk daging sapi pilihan yang direbus lama. Memberikan rasa kaldu yang mantap pada masakan Anda.",
+            "harga": 15000,
+            "harga_asli": 18000,
+            "stok": 500,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134207-7qukw-lhmrocqcpd622a@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 30,
+            "nama": "Indofood Sambal Extra Pedas 1 kg",
+            "deskripsi": "Indofood Sambal Extra Pedas Pillow 1Kg merupakan sambal extrayang dapat menambahkan rasa nikmat pada hidangan anda. Diproses secara higenis dan praktis : 43636 BPOM: MD 256328017001",
+            "harga": 20350,
+            "harga_asli": 21000,
+            "stok": 5000,
+            "gambar": "https://down-id.img.susercontent.com/file/c24bf33710d7c94b71e8ec814bb7144f@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 31,
+            "nama": "Heinz Apple Cider Vinegar Cuka 473 mL",
+            "deskripsi": "Heinz Apple Cider Vinegar 473ml/16oz Cuka yang terbuat dari paduan apel berkualitas dengan air jernih sebening kristal. Dengan rasanya yang murni, cuka ini sangat cocok menjadi dressing untuk salad, marinade, ataupun resep masakan kreasi Anda yang lainnya. Proses produksinya diolah dengan standar dan mutu yang tinggi. Dengan kadar keasamannya yang tepat yakni hanya 5%, cuka ini sangat ideal digunakan untuk membuat acar sendiri di rumah.",
+            "harga": 50000,
+            "harga_asli": 59500,
+            "stok": 100,
+            "gambar": "https://down-id.img.susercontent.com/file/8da554f728e2b597917889c48b748290@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 32,
+            "nama": "Mini Oreo Biskuit Original Pcs 20.4g Untuk Traveling X 10",
+            "deskripsi": "Biskuit Oreo memang sudah teruji kenikmatannya, biskuit yang renyah dan lezat ini selalu memberikan pengalaman makan yang seru. Oreo menciptakan sebuah produk yang baru yaitu Oreo Mini, yang merupakan sebuah biskuit yang mirip dengan Oreo tetapi berbentuk kecil yang lebih renyah dan berisi lebih banyak. Biarpun berukuran lebih kecil, Oreo Mini tetap memberikan rasa yang lezat dan kerenyahan biskuit yang nikmat. Terdapat empat varian rasa yaitu Vanilla, Strawberry, Mocha dan Chocolate yang sangat lezat dan manis. Oreo Mini juga cocok untuk dijadikan Topping disebuah makanan.",
+            "harga": 20000,
+            "harga_asli": 21500,
+            "stok": 500,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134207-7rasa-m3vxgrtaagilb8@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 33,
+            "nama": "Saori Saus Tiram 270 ml",
+            "deskripsi": "Saori Saus Tiram Botol 270 Ml adalah Saus Oriental yang dibuat dari ekstrak tiram asli, yang fungsinya memberikan rasa tiram pada masakan.",
+            "harga": 21400,
+            "harga_asli": 23500,
+            "stok": 50,
+            "gambar": "https://down-id.img.susercontent.com/file/d9f4baa9b121669093ae9dc04ea5a62d@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 34,
+            "nama": "Oh Guan Hing Minyak Wijen Matahari 300 mL",
+            "deskripsi": "Minyak Wijen Oh guan Hing dibuat 100% dengan wijen asli. Di perkaya Omega 3, 6, 9 dan Vitamin E. Melezatkan dan menyehatkan setiap masakan. Membuat aroma masakan lebih wangi. Ditambah tutup yang bisa di flip sehingga memudahkan dalam pemakaiannya.",
+            "harga": 26800,
+            "harga_asli": 27600,
+            "stok": 110,
+            "gambar": "https://down-id.img.susercontent.com/file/810c42afe94a5439814fb9132a411a83@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 35,
+            "nama": "Rose Brand Minyak Goreng Pouch 2L",
+            "deskripsi": "Minyak Rose Brand terbuat kelapa sawit pilihan melalui proses pengolahan secara higienis minyak jernih & berkualitas. Mengadung BETA karoten, Omega 9 & Vitamin A yang baik bagi tubuh. Cocok digunakan seluruh masakan yang digoreng atau jenis makanan lainnya.",
+            "harga": 44000,
+            "harga_asli": 44000,
+            "stok": 100,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134207-7rasi-m1i4fui6bccba8@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 36,
+            "nama": "Fortune Beras Premium 5kg",
+            "deskripsi": "Fortune Beras Premium berasal dari padi segar yang diolah dengan menggunakan teknologi Jepang sehingga dapat menghasilkan beras yang pulen dan putih alam, tanpa penambahan pewarna, pewangi dan pengawet.",
+            "harga": 85000,
+            "harga_asli": 84100,
+            "stok": 100,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134201-7r98r-lzyhge3x3fuw7f@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 37,
+            "nama": "Pondan Tepung Premiks Brownies Kukus & Panggang Chocolate 230 gr",
+            "deskripsi": "Pondan Brownies Kukus & Panggang Chocolate 230gr merupakan tepung khusus untuk membuat kue brownies kukus atau panggang tanpa menggunakan mixer, cukup gunakan garpu atau ballon whisk langsung kukus atau masukkan oven sampai matang. Brownies siap untuk dimakan. Didalamnya sudah terdapat chocolate chip, hanya tinggal menambahkan telur, mentega dan air. Cocok untuk loyang 22x10x4cm",
+            "harga": 15000,
+            "harga_asli": 16500,
+            "stok": 100,
+            "gambar": "https://down-id.img.susercontent.com/file/54a6e54da7444188f6d04d558a60e266@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 38,
+            "nama": "Dolpin Garam 2 x 500 gr",
+            "deskripsi": "Garam Dolpin 500 gr merupakan garam epsom yang terbuat dari mineral alamiah yang terkandung di dalam air. Memiliki manfaat meningkatkan kemampuan tubuh untuk menggunakan insulin, mengurangi resiko terserang diabetes, mengeluarkan racun dan logam berat dalam sel tubuh, meringankan sakit otot & membantu tubuh mengeliminasi zat-zat berbahaya.",
+            "harga": 16000,
+            "harga_asli": 16930,
+            "stok": 110,
+            "gambar": "https://down-id.img.susercontent.com/file/6093b13cc2fa58240efc96917ff4af14@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 39,
+            "nama": "Finna Uleg Sambel Terasi 190 gr",
+            "deskripsi": "Finna Uleg Sambel Terasi 190 gr merupakan sambal yang terbuat dari terasi segar pilihan yang berkualitas tinggi siap menemani sarapan, makan siang, dan makan malam tiap hari.",
+            "harga": 16500,
+            "harga_asli": 17300,
+            "stok": 280,
+            "gambar": "https://down-id.img.susercontent.com/file/a96a595c68f361425f3492afca226611@resize_w900_nl.webp",
+            "kategori": "Sembako"
+        },
+        {
+            "id": 40,
+            "nama": "Kobe Tepung Bumbu Kentucky SuperCrispy 200gr x 2 pcs",
+            "deskripsi": "Japota Sambal Bawang adalah keripik kentang yang terbuat dari kentang asli yang dipotong menggunakan thin-cut technology, bikin chipsnya Japota tipis krenyess, ditambah segarnya taburan bits daun jeruk asli, bikin pedasnya #GakCukupSatu",
+            "harga": 12000,
+            "harga_asli": 12600,
+            "stok": 610,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134201-7r992-m0a1rpqucvtsdb@resize_w900_nl.webp",
+            "kategori": "Sembako"
         }
     ]
 }
