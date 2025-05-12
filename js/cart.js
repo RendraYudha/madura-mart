@@ -1,134 +1,3 @@
-// // Fungsi untuk update tampilan cart
-// function updateCartUI() {
-//     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-//     // Update badge di navbar
-//     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-//     $('#cartBadge').text(totalItems).toggle(totalItems > 0);
-    
-//     // Jika di halaman cart
-//     if (document.getElementById('cartItems')) {
-//         renderCartItems(cart);
-//     }
-// }
-
-// // Render item cart di halaman cart.html
-// function renderCartItems(cart) {
-//     const cartItems = $('#cartItems');
-//     cartItems.empty();
-    
-//     if (cart.length === 0) {
-//         cartItems.html('<p class="text-muted">Keranjang belanja kosong</p>');
-//         $('#cartTotal').text('Rp 0');
-//         return;
-//     }
-    
-//     let total = 0;
-    
-//     cart.forEach(item => {
-//         total += item.price * item.quantity;
-        
-//         const itemHtml = `
-//             <div class="card mb-3">
-//                 <div class="card-body">
-//                     <div class="d-flex justify-content-between">
-//                         <div>
-//                             <h5>${item.name}</h5>
-//                             <p>Rp ${item.price.toLocaleString('id-ID')} x ${item.quantity}</p>
-//                         </div>
-//                         <div>
-//                             <button class="btn btn-sm btn-outline-danger remove-item" data-id="${item.id}">
-//                                 <i class="fas fa-trash"></i>
-//                             </button>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         `;
-//         cartItems.append(itemHtml);
-//     });
-    
-//     $('#cartTotal').text(`Rp ${total.toLocaleString('id-ID')}`);
-// }
-
-// // Fungsi untuk menambahkan ke cart
-// function addToCart(productId, quantity = 1) {
-//     const products = JSON.parse(localStorage.getItem('products')) || [];
-//     const product = products.find(p => p.id === productId);
-    
-//     if (!product) return;
-    
-//     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-//     const existingItem = cart.find(item => item.id === productId);
-    
-//     if (existingItem) {
-//         existingItem.quantity += quantity;
-//     } else {
-//         cart.push({
-//             id: product.id,
-//             name: product.nama,
-//             price: product.harga,
-//             image: product.gambar,
-//             quantity: quantity
-//         });
-//     }
-    
-//     localStorage.setItem('cart', JSON.stringify(cart));
-//     updateCartUI();
-// }
-
-// // Fungsi untuk menghapus item dari cart
-// function removeFromCart(productId) {
-//     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-//     cart = cart.filter(item => item.id !== productId);
-//     localStorage.setItem('cart', JSON.stringify(cart));
-//     updateCartUI();
-// }
-
-// // Event Listeners
-// $(document).ready(function() {
-//     // Update cart saat halaman dimuat
-//     updateCartUI();
-    
-//     // Tambah ke cart (di index.html)
-//     $(document).on('click', '.add-to-cart', function() {
-//         const productId = parseInt($(this).data('id'));
-//         addToCart(productId);
-//     });
-    
-//     // Hapus item (di cart.html)
-//     $(document).on('click', '.remove-item', function() {
-//         const productId = parseInt($(this).data('id'));
-//         removeFromCart(productId);
-//     });
-    
-//     // Proses pesanan (di cart.html)
-//     $('#processBtn').on('click', function() {
-//         $('#checkoutForm').show();
-//         $(this).hide();
-//     });
-    
-//     // Submit form checkout (di cart.html)
-//     $('#customerForm').on('submit', function(e) {
-//         e.preventDefault();
-        
-//         // Simpan data customer
-//         const customerData = {
-//             name: $('#name').val(),
-//             email: $('#email').val(),
-//             phone: $('#phone').val(),
-//             address: $('#address').val(),
-//             orderDate: new Date().toISOString()
-//         };
-        
-//         localStorage.setItem('customerData', JSON.stringify(customerData));
-        
-//         // Redirect ke halaman pembayaran
-//         alert('Pesanan berhasil diproses!');
-//         // window.location.href = 'payment.html';
-//     });
-// });
-
 // EVENT LISTENER UTAMA UNTUK TOMBOL "TAMBAH KE KERANJANG"
 $(document).on('click', '.add-to-cart', function(e) {
     e.preventDefault();
@@ -147,12 +16,25 @@ $(document).on('click', '.add-to-cart', function(e) {
     // 3. Cek apakah produk sudah ada di cart
     const existingItem = cart.find(item => item.id === productId);
     
+    // if (existingItem) {
+    //     // Jika sudah ada, tambah quantity
+    //     existingItem.quantity += 1;
+    //     console.log('Produk sudah ada, quantity ditambah:', existingItem);
+    // } else {
+    //     // Jika belum ada, tambahkan produk baru
+    //     cart.push({
+    //         id: productId,
+    //         name: productName,
+    //         price: productPrice,
+    //         image: productImage,
+    //         quantity: 1
+    //     });
+    //     console.log('Produk baru ditambahkan ke cart:', cart[cart.length-1]);
+    // }
+
     if (existingItem) {
-        // Jika sudah ada, tambah quantity
         existingItem.quantity += 1;
-        console.log('Produk sudah ada, quantity ditambah:', existingItem);
     } else {
-        // Jika belum ada, tambahkan produk baru
         cart.push({
             id: productId,
             name: productName,
@@ -162,6 +44,23 @@ $(document).on('click', '.add-to-cart', function(e) {
         });
         console.log('Produk baru ditambahkan ke cart:', cart[cart.length-1]);
     }
+
+    // 3. **PASTIKAN SERVICE FEE DITAMBAHKAN** 
+    const SERVICE_FEE_ID = "service-fee";
+    const hasServiceFee = cart.some(item => item.id === SERVICE_FEE_ID);
+    
+    if (!hasServiceFee && cart.length > 0) {
+        cart.push({
+            id: SERVICE_FEE_ID,
+            name: "Biaya Layanan",
+            price: 2000,
+            quantity: 1,
+            isServiceFee: true,
+            hidden: true  // Flag untuk UI
+        });
+        console.log("✅ Biaya layanan ditambahkan!");
+    }
+
     
     // 4. Simpan ke sessionStorage
     try {
@@ -385,17 +284,17 @@ function renderCartPage() {
     
     // 2. Inisialisasi variabel
     let subTotal = 0;
-    const serviceFee = 4000;
+    const serviceFee = 2000;
     let discount = 0;
     let isValidPromo = false; // Flag untuk validitas promo
 
     // 3. Daftar promo valid
-    const validPromos = {
-        'DISKON10': 0.1,    // Disc 10%
-        'HEMAT20': 0.2,     // Disc 20%
-        'CASHBACK5K': 5000,  // Disc flat Rp 5.000
-        '66MADURAMART': 0.5        // Disc 50%
-    };
+    // const validPromos = {
+    //     'DISKON10': 0.1,    // Disc 10%
+    //     'HEMAT20': 0.2,     // Disc 20%
+    //     'CASHBACK5K': 5000,  // Disc flat Rp 5.000
+    //     '66MADURAMART': 0.5        // Disc 50%
+    // };
 
     // 4. Handle keranjang kosong
     if (cart.length === 0) {
@@ -412,6 +311,8 @@ function renderCartPage() {
     // 5. Hitung subtotal dan render item
     let cartHTML = '';
     cart.forEach(item => {
+        if (item.isServiceFee) return;
+        if (item.isPromo) return;
         const itemTotal = item.price * item.quantity;
         subTotal += itemTotal;
         
@@ -423,7 +324,7 @@ function renderCartPage() {
                         <h5>${item.name}</h5>
                         <div class="row">
                             <div class="col-sm-6">
-                                <span>Rp ${item.price.toLocaleString('id-ID')}</span>
+                                <span>Rp ${item.price.toLocaleString('id-ID')} x </span>
                                 <button class="btn btn-sm btn-outline-secondary decrease-qty" data-id="${item.id}">-</button>
                                 <span class="mx-2">${item.quantity}</span>
                                 <button class="btn btn-sm btn-outline-secondary increase-qty" data-id="${item.id}">+</button>
@@ -441,47 +342,23 @@ function renderCartPage() {
         `;
     });
 
-    // 6. Validasi kode promo
-    if (promoCode && validPromos[promoCode]) {
-        isValidPromo = true;
-        const promo = validPromos[promoCode];
-        
-        // Hitung diskon
-        discount = typeof promo === 'number' && promo < 1 
-            ? subTotal * promo      // Diskon persentase
-            : promo;                // Diskon nominal
-        
-        $('#promoMessage')
-            .text(`Diskon berhasil diterapkan!`)
-            .removeClass('d-none text-danger')
-            .addClass('text-success');
-    } else if (promoCode) {
-        // Kode tidak valid
-        $('#promoMessage')
-            .text("Kode promo tidak valid")
-            .removeClass('d-none text-success')
-            .addClass('text-danger');
-        sessionStorage.removeItem('promoCode'); // Hapus kode invalid
-    }
-
     // 7. Update tampilan
     $('#cartItems').html(cartHTML);
     $('#subtotalProduct').text(`Rp ${subTotal.toLocaleString('id-ID')}`);
-    $('#cartTotal').text(`Rp ${(subTotal + serviceFee - discount).toLocaleString('id-ID')}`);
-    $('#totalInteger').val((subTotal + serviceFee - discount));
-    $('#totalFormatted').val(`Rp ${(subTotal + serviceFee - discount).toLocaleString('id-ID')}`);
+    // $('#cartTotal').text(`Rp ${(subTotal + serviceFee).toLocaleString('id-ID')}`);
+    // $('#totalFormatted').val(`Rp ${(subTotal + serviceFee - discount).toLocaleString('id-ID')}`);
 
     // const totalTagihan = subTotal + serviceFee - discount;
     // $('#total').val(`Rp ${totalTagihan.toLocaleString('id-ID')}`);
     // $('#total').val(totalTagihan);
     
     // 8. Tampilkan diskon HANYA jika promo valid
-    if (isValidPromo) {
-        $('#discountValue').text(`-Rp ${discount.toLocaleString('id-ID')}`);
-        $('#discountRow').show();
-    } else {
-        $('#discountRow').hide(); // Pastikan disembunyikan
-    }
+    // if (isValidPromo) {
+    //     $('#discountValue').text(`-Rp ${discount.toLocaleString('id-ID')}`);
+    //     $('#discountRow').show();
+    // } else {
+    //     $('#discountRow').hide(); // Pastikan disembunyikan
+    // }
 
     // 10. Inisialisasi Feather Icons
     if (typeof feather !== 'undefined') feather.replace();
@@ -496,17 +373,182 @@ $(document).ready(function() {
 });
 
 // Fungsi untuk menerapkan promo (taruh di bagian lain script)
-$('#applyPromo').click(function() {
-    const promoCode = $('#promoCode').val();
-    sessionStorage.setItem('promoCode', promoCode);
-    renderCartPage(); // Render ulang keranjang
+// $('#applyPromo').click(function() {
+//     const promoCode = $('#promoCode').val();
+//     sessionStorage.setItem('promoCode', promoCode);
+//     renderCartPage(); // Render ulang keranjang
+// });
+
+$('#applyPromo').click( async function() {
+    const promoCode = $('#promoCode').val().trim().toUpperCase();
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    
+    // Hapus promo lama jika ada
+    cart = cart.filter(item => !item.isPromo);
+
+    // Daftar promo valid
+    const validPromos = {
+        'DISKON10': { type: 'percentage', value: 10 },
+        'HEMAT20': { type: 'percentage', value: 20 },
+        'CASHBACK5K': { type: 'fixed', value: 5000 },
+        '66MADURAMART': { type: 'percentage', value: 50}
+    };
+
+    // Hapus promo sebelumnya jika ada
+    const existingPromoIndex = cart.findIndex(item => item.isPromo);
+    if (existingPromoIndex !== -1) {
+        cart.splice(existingPromoIndex, 1);
+    }
+
+    // Validasi promo
+    if (promoCode && validPromos[promoCode]) {
+        const promo = validPromos[promoCode];
+        const subtotal = calculateSubtotal(cart);
+        
+        // Hitung nilai diskon
+        let discountAmount = promo.type === 'percentage' 
+            ? (subtotal * (promo.value / 100)) 
+            : promo.value;
+
+        // Tambahkan sebagai item cart
+        cart.push({
+            id: "promo-code",
+            name: `Promo (${promoCode})`,
+            price: -discountAmount,
+            quantity: 1,
+            isPromo: true,
+            sku: 'DISCOUNT' // Untuk identifikasi Midtrans
+        });
+
+        updateCartTotal();
+        showToast('Promo berhasil diterapkan!');
+        $('#promoMessage')
+            .text(`Diskon berhasil diterapkan!`)
+            .removeClass('d-none text-danger')
+            .addClass('text-success');
+        $('#discountValue')
+            .text(`-Rp ${discountAmount.toLocaleString('id-ID')}`);
+        $('#discountRow')
+            .removeClass('d-none');
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        sessionStorage.setItem('promoCode', promoCode);
+    } else if (promoCode) {
+        updateCartTotal();
+        showToast('Kode promo tidak valid', 'error');
+        $('#promoMessage')
+            .text("Kode promo tidak valid")
+            .removeClass('d-none text-success')
+            .addClass('text-danger');
+        $('#discountRow')
+            .addClass('d-none');
+        // 1. Ambil cart dari sessionStorage
+        const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+        // 2. Filter out item diskon (yang punya isPromo: true)
+        const cartWithoutDiscount = cart.filter(item => !item.isPromo);
+
+        // 3. Simpan kembali ke sessionStorage
+        sessionStorage.setItem('cart', JSON.stringify(cartWithoutDiscount));
+        sessionStorage.removeItem('promoCode');
+    }
+
+    function calculateSubtotal(cart) {
+        return cart.reduce((total, item) => {
+            if (item.isPromo || item.isServiceFee) return total;
+            return total + (item.price * item.quantity);
+        }, 0);
+    }
+
+    updateCartTotal();
+    renderCartPage();
 });
+
+// Saat halaman dimuat, hapus semua promo dari cart
+$(document).ready(function() {
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    const cleanCart = cart.filter(item => !item.isPromo); // Hapus item promo
+    sessionStorage.setItem('cart', JSON.stringify(cleanCart)); // Simpan cart tanpa promo
+    
+    // Reset tampilan promo
+    $('#promoCode').val('');
+    $('#discountRow').addClass('d-none');
+    $('#promoMessage').addClass('d-none');
+});
+
+// 1. Fungsi utilitas untuk menghitung semua nilai
+function calculateCartValues() {
+    try {
+        const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+        
+        const subtotal = cart.reduce((sum, item) => {
+            if (item?.isPromo || item?.isServiceFee) return sum;
+            return sum + (item.price * (item.quantity || 1));
+        }, 0);
+
+        const serviceFee = cart.find(item => item?.isServiceFee)?.price || 2000;
+        const discount = Math.abs(cart.find(item => item?.isPromo)?.price || 0);
+
+        return {
+            subtotal,
+            serviceFee,
+            discount,
+            total: subtotal + serviceFee - discount
+        };
+    } catch (error) {
+        console.error("Error in calculateCartValues:", error);
+        return { subtotal: 0, serviceFee: 0, discount: 0, total: 0 };
+    }
+}
+
+// 2. Fungsi update UI dengan debug
+function updateCartTotal() {
+    console.log("Memperbarui UI..."); // Debug log
+    
+    const { subtotal } = calculateCartValues();
+    console.log("Nilai subtotal:", subtotal); // Debug nilai
+    const { discount } = calculateCartValues();
+    console.log("Nilai diskon:", discount); // Debug nilai
+    const { serviceFee } = calculateCartValues();
+    console.log("Nilai layan:", serviceFee); // Debug nilai
+    const { total } = calculateCartValues();
+    console.log("Nilai total:", total); // Debug nilai
+    
+    const $totalElement = $('#cartTotal');
+    const $totalTagihan = $('#totalTagihan');
+    const $totalInteger = $('#totalInteger');
+    console.log("Elemen target:", $totalElement); // Debug elemen
+    
+    if ($totalElement.length) {
+        $totalElement.text(`Rp ${total.toLocaleString('id-ID')}`);
+        $totalTagihan.val(`Rp ${total.toLocaleString('id-ID')}`);
+        $totalInteger.val(total);
+    } else {
+        console.error("Error: #cartTotal tidak ditemukan!");
+    }
+}
+
+// 3. Panggil manual untuk testing
+$(document).ready(function() {
+    console.log("Document ready...");
+    updateCartTotal();
+});
+
 
 // Fungsi update cart badge (digunakan di semua halaman)
 function updateCartBadge() {
     const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
-    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-    $('#cartBadge').text(totalItems).toggle(totalItems > 0);
+    
+    // Filter out service fee dan diskon sebelum menghitung
+    const totalItems = cart.reduce((total, item) => {
+        if (item.isServiceFee || item.isPromo) {
+            return total; // Lewati item ini
+        }
+        return total + item.quantity;
+    }, 0);
+    
+    $('#cartBadge')
+        .text(totalItems)
+        .toggle(totalItems > 0);
 }
 
 function generateOrderId() {
@@ -538,11 +580,13 @@ $(document).ready(function() {
         $(document).on('click', '.increase-qty', function() {
             const productId = parseInt($(this).data('id'));
             updateQuantity(productId, 1);
+            updateCartTotal();
         });
         
         $(document).on('click', '.decrease-qty', function() {
             const productId = parseInt($(this).data('id'));
             updateQuantity(productId, -1);
+            updateCartTotal();
         });
         
         $(document).on('click', '.remove-item', function() {
@@ -552,6 +596,7 @@ $(document).ready(function() {
             sessionStorage.setItem('cart', JSON.stringify(cart));
             renderCartPage();
             updateCartBadge(); // Update badge setelah hapus item
+            updateCartTotal();
         });
     }
 

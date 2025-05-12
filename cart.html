@@ -46,8 +46,11 @@
                                 <a class="nav-link rounded-2" href="index.html#kontak">Kontak</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link rounded-2" href=""><i data-feather="shopping-cart"></i></a>
-                            </li>
+                            <a href="cart.html" class="btn position-relative">
+                                <i data-feather="shopping-cart"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartBadge">0</span>
+                            </a>
+                        </li>
                         </ul>
                     </div>
                 </div>
@@ -64,14 +67,14 @@
                 <div class="card mt-3">
                     <div class="card-body">
                         <!-- 1. Form Input Kode Promo -->
-                        <!-- <div class="mb-3">
+                        <div class="mb-3">
                             <label for="promoCode" class="form-label">Kode Promo</label>
                             <div class="input-group">
                             <input type="text" class="form-control" id="promoCode" placeholder="Masukkan kode promo">
                             <button class="btn btn-outline-secondary" type="button" id="applyPromo">Gunakan</button>
                             </div>
                             <div id="promoMessage" class="text-success mt-1 small"></div>
-                        </div> -->
+                        </div>
                     
                         <!-- 2. Subtotal Harga Produk -->
                         <div class="border-bottom pb-2 mb-2">
@@ -79,15 +82,15 @@
                                 <span>Subtotal Produk</span>
                                 <span id="subtotalProduct">Rp 0</span>
                             </div>
-                            <!-- <div class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-between">
                                 <span>Biaya Layanan</span>
-                                <span id="serviceFee">Rp 4.000</span>
-                            </div> -->
+                                <span id="serviceFee">Rp 2.000</span>
+                            </div>
                             <!-- 3. Keterangan Diskon (Muncul jika ada promo) -->
-                            <!-- <div class="d-flex justify-content-between text-danger mb-2" id="discountRow" style="display: none !important;">
+                            <div class="d-flex d-none justify-content-between text-danger mb-2" id="discountRow">
                                 <span>Diskon Promo</span>
                                 <span id="discountValue">-Rp 0</span>
-                            </div> -->
+                            </div>
                         </div>
 
                         <h5 class="card-title">Total Pembayaran</h5>
@@ -122,7 +125,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="total" class="form-label">Tagihan</label>
-                                    <input class="form-control" id="totalFormatted" rows="3" name="totalFormatted" value="" readonly></input>
+                                    <input class="form-control" id="totalTagihan" rows="3" name="totalTagihan" value="" readonly></input>
                                 </div>
                                 <div class="mb-3" style="display: none;">
                                     <label for="total2" class="form-label">Tagihan</label>
@@ -227,51 +230,5 @@
         <script>
             document.querySelector('footer .mb-0').innerHTML = `&copy; ${new Date().getFullYear()} Madura Mart. All rights reserved.`;
         </script>
-        <!-- <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzLAbORBS6j1pUw7vzHIktwmU0kKxfUA2cWUTmvK7DDZQR0_Fo2IUTcq8EXFXStzTHc6w/exec'
-            const form = document.forms['submit-to-google-sheet']
-        
-            form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => console.log('Success!', response))
-                .catch(error => console.error('Error!', error.message))
-            })
-        </script> -->
-
-        <!-- <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzLAbORBS6j1pUw7vzHIktwmU0kKxfUA2cWUTmvK7DDZQR0_Fo2IUTcq8EXFXStzTHc6w/exec';
-        
-            document.forms['submit-to-google-sheet'].addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                // Ambil data dari sessionStorage dan form
-                const cartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
-                const formData = Object.fromEntries(new FormData(e.target));
-                
-                // Kirim per produk (satu produk = satu baris)
-                try {
-                    for (const product of cartItems) {
-                    const payload = {
-                        customer: formData,      // Data pelanggan sama untuk semua produk
-                        product: product,       // Data produk per item
-                        orderDate: new Date().toISOString(),
-                        subtotal: product.price * product.quantity
-                    };
-
-                    await fetch(scriptURL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    }
-                    
-                    alert('Semua produk berhasil disimpan!');
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('Gagal menyimpan data!');
-                }
-            });
-        </script> -->
     </body>
 </html>

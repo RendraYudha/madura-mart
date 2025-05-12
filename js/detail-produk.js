@@ -140,6 +140,22 @@ $(document).on('click', '.btn-add-to-cart', function(e) {
         console.log('Produk baru ditambahkan ke cart:', cart[cart.length-1]);
     }
 
+    // 3. **PASTIKAN SERVICE FEE DITAMBAHKAN** 
+    const SERVICE_FEE_ID = "service-fee";
+    const hasServiceFee = cart.some(item => item.id === SERVICE_FEE_ID);
+    
+    if (!hasServiceFee && cart.length > 0) {
+        cart.push({
+            id: SERVICE_FEE_ID,
+            name: "Biaya Layanan",
+            price: 4000,
+            quantity: 1,
+            isServiceFee: true,
+            hidden: true  // Flag untuk UI
+        });
+        console.log("✅ Biaya layanan ditambahkan!");
+    }
+
     // 4. Simpan ke sessionStorage
     try {
         sessionStorage.setItem('cart', JSON.stringify(cart));
