@@ -307,7 +307,7 @@
             "harga": 50000,
             "harga_asli": 59500,
             "stok": 100,
-            "gambar": "https://down-id.img.susercontent.com/file/8da554f728e2b597917889c48b748290@resize_w900_nl.webp",
+            "gambar": "https://down-id.img.susercontent.com/file/70d49117dbb8fb105e1c3a88edf876b2@resize_w900_nl.webp",
             "kategori": "Sembako"
         },
         {
@@ -399,6 +399,86 @@
             "stok": 610,
             "gambar": "https://down-id.img.susercontent.com/file/id-11134201-7r992-m0a1rpqucvtsdb@resize_w900_nl.webp",
             "kategori": "Sembako"
+        },
+        {
+            "id": 41,
+            "nama": "Neo Coffee Moccachino 3 x 180 gr",
+            "deskripsi": "Neo Coffee Moccachino 180 gr adalah bubuk kopi instan yang terbuat oleh bahan-bahan berkualitas dan ditambahkan oleh rasa moccachino. Rasa manis yang sangat pas saat meminum sangat dicari oleh pencinta kopi dan minuman lainnya. Produk ini cocok untuk diminum setiap hari bersama teman-teman dan keluarga.",
+            "harga": 27000,
+            "harga_asli": 30900,
+            "stok": 70,
+            "gambar": "https://down-id.img.susercontent.com/file/id-11134207-7qul7-lja3ccsv15zq1b@resize_w900_nl.webp",
+            "kategori": "Minuman"
+        },
+        {
+            "id": 42,
+            "nama": "Top Coffee Kopi Instan Cappucino Bag 25 gr isi 12 + 6 pcs",
+            "deskripsi": "Detail: Kenikmatan klasik cappuccino dari perpaduan biji kopi arabika dan robusta yang berikan kemewahan rasa. Dengan foam yang lebih tebal, manjakan dirimu dengan citarasa creamy disetiap tegukan. Taburan Crunchy Chocomalt yang menggoda, sempurnakan nikmatnya Top Coffee Cappucino. ",
+            "harga": 27500,
+            "harga_asli": 28000,
+            "stok": 0,
+            "gambar": "https://down-id.img.susercontent.com/file/9a093a2bc109dae18c4cadf976a57d85@resize_w900_nl.webp",
+            "kategori": "Minuman"
+        },
+        {
+            "id": 43,
+            "nama": "AQUA (galon + isi) 19l",
+            "deskripsi": "AQUA berasal dari sumber mata air yang terpilih dengan segala kemurnian dan kandungan mineral alami yang terpelihara. Dengan proses yang baik, memastikan higienis tetap terjaga. AQUA dikemas dengan proses higienis dalam beberapa ukuran kemasan botol plastik",
+            "harga": 50000,
+            "harga_asli": 55000,
+            "stok": 10,
+            "gambar": "https://cdn-klik.klikindomaret.com/klik-catalog/product/10037807_1.jpg",
+            "kategori": "Minuman"
+        },
+        {
+            "id": 44,
+            "nama": "Nestle air mineral pure life 600ml",
+            "deskripsi": "Air minum dalam kemasan 600ml",
+            "harga": 3300,
+            "harga_asli": 3300,
+            "stok": 60,
+            "gambar": "https://cdn-klik.klikindomaret.com/klik-catalog/product/20005529_1.jpg",
+            "kategori": "Minuman"
+        },
+        {
+            "id": 45,
+            "nama": "Le Minarel Air Mineral 500ml",
+            "deskripsi": "Le minerale air minum dalam kemasan. Air mineral pegunungan, dibotolkan langsung di sumbernya.",
+            "harga": 7500,
+            "harga_asli": 7500,
+            "stok": 80,
+            "gambar": "https://cdn-klik.klikindomaret.com/klik-catalog/product/20085988_1.jpg",
+            "kategori": "Minuman"
+        },
+        {
+            "id": 46,
+            "nama": "Marlboro Rokok Kretek 12's",
+            "deskripsi": "Marlboro Rokok Kretek 12's",
+            "harga": 12400,
+            "harga_asli": 12500,
+            "stok": 10,
+            "gambar": "https://cdn-klik.klikindomaret.com/klik-catalog/product/20113074_1.jpg",
+            "kategori": "Rokok"
+        },
+        {
+            "id": 47,
+            "nama": "Marlboro Rokok Filter Light 20's",
+            "deskripsi": "Marlboro Rokok Filter Light 20's",
+            "harga": 53000,
+            "harga_asli": 53500,
+            "stok": 60,
+            "gambar": "https://cdn-klik.klikindomaret.com/klik-catalog/product/20070618_1.jpg",
+            "kategori": "Rokok"
+        },
+        {
+            "id": 48,
+            "nama": "Esse Mild Rokok Filter 20's",
+            "deskripsi": "Esse Mild Rokok Filter 20's",
+            "harga": 44000,
+            "harga_asli": 44500,
+            "stok": 0,
+            "gambar": "https://cdn-klik.klikindomaret.com/klik-catalog/product/20052260_1.jpg",
+            "kategori": "Rokok"
         }
     ]
 }
