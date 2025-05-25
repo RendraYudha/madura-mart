@@ -13,7 +13,7 @@ $(document).ready(function() {
     }
     
     // Auto slide
-    let interval = setInterval(nextTestimoni, 5000);
+    let interval = setInterval(nextTestimoni, 2250);
     
     // Fungsi next testimoni
     function nextTestimoni() {
@@ -38,7 +38,7 @@ $(document).ready(function() {
     $('.carousel-control-prev').click(function() {
         clearInterval(interval);
         prevTestimoni();
-        interval = setInterval(nextTestimoni, 5000);
+        interval = setInterval(nextTestimoni, 2250);
     });
     
     // Pause saat hover
@@ -47,7 +47,7 @@ $(document).ready(function() {
             clearInterval(interval);
         },
         function() {
-            interval = setInterval(nextTestimoni, 5000);
+            interval = setInterval(nextTestimoni, 2250);
         }
     );
     

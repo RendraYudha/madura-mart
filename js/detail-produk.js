@@ -61,6 +61,7 @@ $(document).ready(function() {
         $('#product-price').text(formattedPrice);
         $('#product-description').text(product.deskripsi || 'Deskripsi tidak tersedia');
         $('#product-stock').text(product.stok > 0 ? `Tersedia (${product.stok})` : 'Kosong');
+        $('#addToCart').prop('disabled', product.stok <= 0).toggleClass('out-of-stock', product.stok <= 0).html(product.stok > 0 ? '<i data-feather="shopping-cart" class="me-2"></i>Tambah ke Keranjang' : '<i data-feather="x-circle" class="me-2"></i>Stok Habis');;
         $('#product-category').text(product.kategori || 'Kategori tidak tersedia');
         $('#addToCart').attr('data-id', product.id).attr('data-nama', product.nama).attr('data-harga', product.harga).attr('data-gambar', product.gambar);
         

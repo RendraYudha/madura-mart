@@ -22,7 +22,7 @@
             <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="index.html">
-                        <img src="img/tes.png" alt="Logo" width="60" height="40">
+                        <img src="img/logo.png" alt="Logo" width="40" height="40">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -70,7 +70,7 @@
                         <div class="mb-3">
                             <label for="promoCode" class="form-label">Kode Promo</label>
                             <div class="input-group">
-                            <input type="text" class="form-control" id="promoCode" placeholder="Masukkan kode promo">
+                            <input type="text" class="form-control" id="promoCode" placeholder="Masukkan kode promo (Kode promo tersedia: CASHBACK5K, DISKON10, 66MADURAMART, HEMAT20)">
                             <button class="btn btn-outline-secondary" type="button" id="applyPromo">Gunakan</button>
                             </div>
                             <div id="promoMessage" class="text-success mt-1 small"></div>
@@ -109,19 +109,19 @@
                             <form id="customerForm" name="submit-to-google-sheet">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="name" name="nama" required>
+                                    <input type="text" class="form-control" id="name" name="nama" autocomplete="off" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
+                                    <input type="email" class="form-control" id="email" name="email" autocomplete="off" placeholder="Please entry a valid e-mail address" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">No. Telepon</label>
-                                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                                    <input type="tel" class="form-control" id="phone" name="phone" autocomplete="off" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="address" class="form-label">Alamat</label>
-                                    <textarea class="form-control" id="address" rows="3" name="alamat" required></textarea>
+                                    <textarea class="form-control" id="address" rows="3" name="alamat" autocomplete="off" required></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="total" class="form-label">Tagihan</label>
@@ -177,28 +177,26 @@
                             <h5 class="text-success mb-4">Hubungi Kami</h5>
                             <ul class="list-unstyled">
                                 <li class="mb-3"><a href="https://maps.app.goo.gl/f46ANiuGpykLVGEFA" class="text-white text-decoration-none" target="_blank"><i data-feather="map-pin" class="me-2"></i> Prodi Manajemen, FEB, UNESA</a></li>
-                                <li class="mb-3"><a href="mailto:rendra.23102@mhs.unesa.ac.id" class="text-white text-decoration-none" target="_blank"><i data-feather="mail" class="me-2"></i> rendra.23102@mhs.unesa.ac.id</a></li>
-                                <li class="mb-3"><a href="https://wa.me/6285731552077" class="text-white text-decoration-none" target="_blank"><i data-feather="phone" class="me-2"></i> (085) 731-552-077</a></li>
+                                <li class="mb-3"><a href="mailto:rendra.23102@mhs.unesa.ac.id" class="text-white text-decoration-none" target="_blank"><i data-feather="mail" class="me-2"></i> contact@madura-mart.com</a></li>
+                                <li class="mb-3"><a href="https://wa.me/6281515076631" class="text-white text-decoration-none" target="_blank"><i data-feather="phone" class="me-2"></i> (081) 515-076-631</a></li>
                                 <li><a href="#" class="text-white text-decoration-none"><i data-feather="clock" class="me-2"></i> Buka 24 jam</a></li>
                             </ul>
                         </div>
             
-                        <!-- Kolom Newsletter -->
+                        <!-- Kolom Payment -->
                         <div class="col-lg-3 mb-4">
-                            <h5 class="text-success mb-4">Newsletter</h5>
-                            <p>Dapatkan promo dan penawaran spesial langsung ke email Anda.</p>
-                            <form class="mt-3">
-                                <div class="input-group mb-3">
-                                    <input type="email" class="form-control" placeholder="Email Anda" aria-label="Email Anda">
-                                    <button class="btn btn-success" type="submit"><i data-feather="send"></i></button>
-                                </div>
-                            </form>
-                            <div class="payment-methods mt-4">
-                                <h6 class="text-success mb-3">Metode Pembayaran</h6>
+                            <div class="payment-methods">
+                                <h5 class="text-success mb-3">Metode Pembayaran</h5>
                                 <div class="d-flex flex-wrap">
-                                    <i data-feather="credit-card" class="me-3 mb-2"></i>
-                                    <i data-feather="dollar-sign" class="me-3 mb-2"></i>
-                                    <i data-feather="shopping-cart" class="me-3 mb-2"></i>
+                                    <img src="https://down-id.img.susercontent.com/file/id-11134258-7rasg-m3elfigsva7j31" alt="Alfamart" class="me-3 mb-2">
+                                    <img src="https://down-id.img.susercontent.com/file/id-11134258-7rasi-m3elg6a60mmod7" alt="Indomaret" class="me-3 mb-2">
+                                    <img src="https://down-id.img.susercontent.com/file/id-11134258-7rasi-m3elgwdxtfqme2" alt="Shopee Pay" class="me-3 mb-2">
+                                    <img src="https://down-id.img.susercontent.com/file/id-11134258-7rasa-m3elfqc3cpsg90" alt="Bank BCA" class="me-3 mb-2">
+                                    <img src="https://down-id.img.susercontent.com/file/id-11134258-7rasc-m3elfssvqtqn58" alt="Bank BNI" class="me-3 mb-2">
+                                    <img src="https://down-id.img.susercontent.com/file/id-11134258-7rask-m3elfv3kdsb4ae" alt="Bank BRI" class="me-3 mb-2">
+                                    <img src="https://down-id.img.susercontent.com/file/id-11134258-7rasg-m3elgbu7vvkge8" alt="Bank Mandiri" class="me-3 mb-2">
+                                    <img src="https://down-id.img.susercontent.com/file/id-11134258-7rasd-m3elh2ewzwnj27" alt="VISA" class="me-3 mb-2">
+                                    <img src="https://down-id.img.susercontent.com/file/id-11134258-7rasi-m3elgeem4oo3e8" alt="Master Card" class="me-3 mb-2">
                                 </div>
                             </div>
                         </div>
@@ -211,7 +209,7 @@
                             <p class="mb-0">&copy; 2025 Madura Mart. All rights reserved.</p>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
-                            <p>Made with ❤️</p>
+                            <p>Made with ❤️ by Rendra Yudha @Kelompok 11</p>
                         </div>
                     </div>
                 </div>
